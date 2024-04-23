@@ -30,7 +30,7 @@ function signin() {
     document.getElementById("username").value = "";
     document.getElementById("email").value = "";
   } else {
-    document.getElementById("").innerHTML = //hier namen für nicht gleiches passwort
+    document.getElementById("").innerHTML = //hier namen für nicht gleiche passwort
       "Die Passwörter stimmen nicht überein";
   }
   document.getElementById("cfmpassword").value = "";

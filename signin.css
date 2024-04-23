@@ -1,0 +1,25 @@
+body {
+    background: rgb(0,51,103);
+    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#signupform {
+    border-radius: 20px;
+    background-color: white;
+    padding: 0rem 5rem 15rem 5rem;
+    margin-top: 9%;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    font-family: Verdana, serif;
+}
