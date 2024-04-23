@@ -8,14 +8,18 @@ html, body {
     margin: 0;
 }
 
-#loginform {
+#signupform {
     border-radius: 20px;
     background-color: white;
-    padding: 15rem 5rem 15rem 5rem;
+    padding: 0rem 5rem 15rem 5rem;
     margin-top: 9%;
 }
 
 #container {
     display: flex;
     justify-content: center;
+}
+
+* {
+    font-family: Verdana, serif;
 }
