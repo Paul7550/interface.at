@@ -1,11 +1,21 @@
 const username = [];
 const password = [];
 let usercount = 0;
+var safeusername;
 function signin() {
-  username[usercount] = document.getElementById("username");
-  password[usercount] = document.getElementById("passwort");
+  for (i = 0; i <= usercount; i++) {
+    if (
+      document.getElementById("username") != username[i] &&
+      document.getElementById("cfmpassword") ==
+        document.getElementById("password")
+    ) {
+      username[usercount] = document.getElementById("username");
+      password[usercount] = document.getElementById("passwort");
+    }
+  }
+  store();
 }
-
+function store() {}
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
 }
