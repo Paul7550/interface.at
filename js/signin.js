@@ -34,9 +34,11 @@ function createacc() {
     document.getElementById("email").value = "";
     setCookie("logdinuser", usercount);
     store();
-  } else {
-    document.getElementById("passwordnotmatch").innerHTML =
-      "Die Passwörter stimmen nicht überein";
+  } else if (
+    document.getElementById("cfmpassword").value !=
+    document.getElementById("password").value
+  ) {
+    document.getElementById("!cfmpassword").hidden = false;
   }
   document.getElementById("cfmpassword").value = "";
   document.getElementById("password").value = "";
@@ -51,6 +53,7 @@ function store() {
 }
 function cancel() {
   document.getElementById("alert").hidden = true;
+  document.getElementById("!cfmpassword").hidden = true;
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
