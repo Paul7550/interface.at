@@ -2,13 +2,14 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Interface</title>
     <script src="index.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="load()">
     <a href="signin.html">
-        <button>acc erstelen</button>
+        <button id="signin">acc erstelen</button>
     </a>
+        <button onclick="logout()" id="logout" hidden> log out</button>
 </body>
 </html>
