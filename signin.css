@@ -76,3 +76,29 @@ html, body {
     cursor: pointer;
     width: 100%;
 }
+
+.alert {
+    padding: 10px 5px 10px 500px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin: 15px 10px 0px 10px;
+    float: right;
+    position: absolute;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
