@@ -9,19 +9,23 @@
     <body>
         <div id="container">
             <div id="signupform">
-                <h1>Signup Form</h1>
-                <button class="button">Signup</button>
-                <button class="button">Login</button>
+                <h1 class="title">Signup Form</h1>
+                <div class="wrapper">
+                    <button class="button">Signup</button>
+                    <button class="button" id="space">Login</button>
+                </div>
                 <br>
-                <input id="email" placeholder="E-Mail" type="email">
-                <br>
-                <input id="username" placeholder="Username">
-                <br>
-                <input id="password" placeholder="Password" type="password">
-                <br>
-                <input id="cfmpassword" placeholder="Confirm password" type="password">
-                <br>
-                <a><button onclick="signin()">create acc</button></a>
+                <div id="textinput">
+                    <input id="email" placeholder="E-Mail" type="email" class="spaceinput">
+                    <br>
+                    <input id="username" placeholder="Username" type="text" class="spaceinput">
+                    <br>
+                    <input id="password" placeholder="Password" type="password" class="spaceinput">
+                    <br>
+                    <input id="cfmpassword" placeholder="Confirm password" type="password" class="spaceinput">
+                    <br>
+                    <a><button onclick="signin()">create acc</button></a>
+                </div>
             </div>
         </div>
     </body>

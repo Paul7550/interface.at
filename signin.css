@@ -28,5 +28,30 @@ html, body {
     border-radius: 20px;
     background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
     color: white;
-    padding: 10px 13%;
+    padding: 10px 40px;
+    cursor: pointer;
+    width: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.wrapper {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+#space {
+    margin-right: 10px;
+}
+
+#textinput {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.spaceinput {
+    margin-bottom: 30px;
 }
