@@ -4,10 +4,12 @@ let email = [];
 let usercount = 0;
 var safeusername;
 var safeemail;
+var safepassword;
 function load() {
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
+  password = JSON.parse(getCookie("passwords"));
 }
 function signin() {
   for (i = 0; i <= usercount; i++) {
@@ -28,7 +30,6 @@ function createacc() {
     password[usercount] = document.getElementById("password").value;
     usercount++;
     setCookie("usercount", usercount);
-    setCookie("logdin", usercount);
     document.getElementById("link").href = "index.html";
     document.getElementById("username").value = "";
     document.getElementById("email").value = "";
@@ -48,8 +49,10 @@ function store() {
   XMLDocument;
   safeusername = JSON.stringify(username);
   safeemail = JSON.stringify(email);
+  safepassword = JSON.stringify(password);
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
+  setCookie("passwords", safepassword);
 }
 function cancel() {
   document.getElementById("alert").hidden = true;

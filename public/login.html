@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/signin.css">
+    <script src="../js/login.js	"></script>
 </head>
-<body>
-    <div class="alert">
+<body onload="load()">
+    <div class="alert" hidden>
         <span id="emailinuse" class="closebtn">&times;</span>
     </div>
     <div id="container">
@@ -18,13 +19,13 @@
             </div>
             <br>
             <div id="textinput">
-                <input id="username" placeholder="Username" type="text" class="spaceinput">
+                <input id="email" placeholder="Email" type="text" class="spaceinput">
                 <br>
                 <input id="password" placeholder="Password" type="password" class="spaceinput">
                 <span id="passwordnotmatch"></span>
                 <br>
                 <div>
-                    <a><button class="signupbutton" id="link" onclick="signin()">Login</button></a>
+                    <a id="link"><button class="signupbutton" id="link" onclick="login()">Login</button></a>
                 </div>
             </div> <!--Textinput-->
         </div> <!--Signupform-->
