@@ -21,15 +21,16 @@ function signin() {
     document.getElementById("cfmpassword").value ==
     document.getElementById("password").value
   ) {
-    usercount++;
     email[usercount] = document.getElementById("email").value;
     username[usercount] = document.getElementById("username").value;
     password[usercount] = document.getElementById("password").value;
+    usercount++;
     setCookie("usercount", usercount);
     setCookie("logdin", usercount);
-    //document.getElementById("link").href = "";
+    document.getElementById("link").href = "index.html";
     document.getElementById("username").value = "";
     document.getElementById("email").value = "";
+    setCookie("logdinuser", usercount);
     store();
   } else {
     document.getElementById("passwordnotmatch").innerHTML =
