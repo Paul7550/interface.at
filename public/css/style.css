@@ -5,7 +5,7 @@
 
 html, body {
     margin: 0;
-    height: 200%;
+    height: 100%;
     color: white;
     background-color: #202020;
 }
@@ -80,4 +80,13 @@ html, body {
 
 .spacer {
     margin-top: 2rem;
+}
+
+.button {
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
+    color: white;
+    padding: 10px 60px;
+    cursor: pointer;
+    width: 80%;
 }
