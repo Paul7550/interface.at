@@ -6,9 +6,9 @@
         <script src="signin.js"></script>
         <link rel="stylesheet" href="signin.css">
     </head>
-    <body>
-    <div class="alert">
-        <span id="emailinuse" class="closebtn">&times;</span>
+    <body onload="load()">
+    <div class="alert" id="alert" hidden>
+        Diese Email wurde bereits vergeben <button>x</button>
     </div>
         <div id="container">
             <div id="signupform">
@@ -21,10 +21,6 @@
                 <div id="textinput">
                     <input id="email" placeholder="E-Mail" type="email" class="spaceinput">
                     <span id="emailinuse"></span>
-                    <div id="allert" hidden>
-                        <span class="closebtn">&times;</span>  
-                         Diese Email ist bereits vergeben
-                      </div>
                     <br>
                     <input id="username" placeholder="Username" type="text" class="spaceinput">
                     <br>

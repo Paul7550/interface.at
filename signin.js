@@ -1,17 +1,20 @@
-const username = [];
-const password = [];
-const email = [];
+let username = [];
+let password = [];
+let email = [];
 let usercount = 0;
 var safeusername;
 var safeemail;
-safeusername = getCookie("usernames");
-username = JSON.stringify(safeusername);
-safeemail = getCookie("emails");
-email = JSON.stringify(safeemail);
+function load() {
+  console.log(getCookie("usernames"));
+  username = JSON.parse(getCookie("usernames"));
+  console.log(username);
+  email = JSON.parse(getCookie("emails"));
+  usercount = parseInt(getCookie("usercount"));
+}
 function signin() {
   for (i = 0; i <= usercount; i++) {
     if (document.getElementById("email").value == email[i]) {
-      document.getElementById("allert").hidden = false;
+      document.getElementById("alert").hidden = false;
       return;
     }
   }
