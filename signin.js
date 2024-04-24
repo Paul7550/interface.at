@@ -5,9 +5,7 @@ let usercount = 0;
 var safeusername;
 var safeemail;
 function load() {
-  console.log(getCookie("usernames"));
   username = JSON.parse(getCookie("usernames"));
-  console.log(username);
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
 }
@@ -50,6 +48,9 @@ function store() {
   safeemail = JSON.stringify(email);
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
+}
+function cancel() {
+  document.getElementById("alert").hidden = true;
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
