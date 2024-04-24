@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div class="alert">
+        <span id="emailinuse" class="closebtn">&times;</span>
+    </div>
+    <div id="container">
+        <div id="signupform">
+            <h1 class="title">Login Form</h1>
+            <div class="wrapper">
+                <a href="signin.html"><button class="button">Signup</button></a>
+                <a href="login.html"><button class="button" id="space">Login</button></a>
+            </div>
+            <br>
+            <div id="textinput">
+                <input id="username" placeholder="Username" type="text" class="spaceinput">
+                <br>
+                <input id="password" placeholder="Password" type="password" class="spaceinput">
+                <span id="passwordnotmatch"></span>
+                <br>
+                <div>
+                    <a><button class="signupbutton" id="link" onclick="signin()">Login</button></a>
+                </div>
+            </div> <!--Textinput-->
+        </div> <!--Signupform-->
+    </div> <!--Container-->
+</body>
+</html>
