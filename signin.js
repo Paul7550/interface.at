@@ -3,15 +3,16 @@ const password = [];
 const email = [];
 let usercount = 0;
 var safeusername;
+var safeemail;
+safeusername = getCookie("usernames");
+username = JSON.stringify(safeusername);
+safeemail = getCookie("emails");
+email = JSON.stringify(safeemail);
 function signin() {
-  usercount = getCookie("usercount");
-  if (!usercount) {
-    usercount = 0;
-  }
   for (i = 0; i <= usercount; i++) {
     if (document.getElementById("email").value == email[i]) {
-      document.getElementById("").innerHTML =
-        "diese Email wurde bereits verwendet"; //Name für bereits benutzter email
+      document.getElementById("emailinuse").innerHTML =
+        "diese Email wurde bereits verwendet";
       return;
     }
   }
@@ -21,7 +22,7 @@ function signin() {
     document.getElementById("password").value
   ) {
     usercount++;
-    email[usercount] = document.getElementById("email");
+    email[usercount] = document.getElementById("email").value;
     username[usercount] = document.getElementById("username").value;
     password[usercount] = document.getElementById("password").value;
     setCookie("usercount", usercount);
@@ -29,21 +30,20 @@ function signin() {
     //document.getElementById("link").href = "";
     document.getElementById("username").value = "";
     document.getElementById("email").value = "";
+    store();
   } else {
-    document.getElementById("").innerHTML = //hier namen für nicht gleiche passwort
+    document.getElementById("passwordnotmatch").innerHTML =
       "Die Passwörter stimmen nicht überein";
   }
   document.getElementById("cfmpassword").value = "";
   document.getElementById("password").value = "";
-  store();
+  document.getElementById("passwordnotmatch").innerHTML = "";
 }
 function store() {
   XMLDocument;
-  if (safeusername == undefined) {
-    safeusername = String(username.join() + ",");
-  } else {
-    safeusername += String(username.join() + ",");
-  }
+  safeusername = JSON.stringify(username);
+  safeemail = JSON.stringify(email);
+  setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
 }
 function setCookie(cname, cvalue) {
