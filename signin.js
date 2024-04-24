@@ -11,12 +11,13 @@ email = JSON.stringify(safeemail);
 function signin() {
   for (i = 0; i <= usercount; i++) {
     if (document.getElementById("email").value == email[i]) {
-      document.getElementById("emailinuse").innerHTML =
-        "diese Email wurde bereits verwendet";
+      document.getElementById("allert").hidden = false;
       return;
     }
   }
-
+  createacc();
+}
+function createacc() {
   if (
     document.getElementById("cfmpassword").value ==
     document.getElementById("password").value
@@ -46,18 +47,6 @@ function store() {
   safeemail = JSON.stringify(email);
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
-}
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function () {
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function () {
-      div.style.display = "none";
-    }, 600);
-  };
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
