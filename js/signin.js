@@ -24,6 +24,7 @@ function signin() {
     createacc();
   } else {
     document.getElementById("!email").hidden = false;
+    document.getElementById("email").value = "";
   }
 }
 function createacc() {
