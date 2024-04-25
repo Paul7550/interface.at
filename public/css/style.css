@@ -6,12 +6,12 @@
 html, body {
     margin: 0;
     height: 100%;
-    color: white;
-    background-color: #202020;
+/*    color: white;
+    background-color: #202020;*/
 }
 
 #navbar {
-    border: 1px solid white;
+    border: 1px solid black;
     height: 90%;
     position: fixed;
     text-align: center;
@@ -34,8 +34,8 @@ html, body {
 
 .button {
     border-radius: 15px;
-    background: #202020;
-    color: white;
+/*    background: #202020;
+    color: white;*/
     padding: 10px 60px;
     cursor: pointer;
     width: 80%;
