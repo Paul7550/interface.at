@@ -6,62 +6,12 @@
 html, body {
     margin: 0;
     height: 100%;
-    color: white;
-    background-color: #202020;
-}
-
-
-/*Columns for Desktop / Laptop*/
-.col-l-1 {
-    width: 8.33%;
-}
-
-.col-l-2 {
-    width: 16.66%;
-}
-
-.col-l-3 {
-    width: 25%;
-}
-
-.col-l-4 {
-    width: 33.33%;
-}
-
-.col-l-5 {
-    width: 41.66%;
-}
-
-.col-l-6 {
-    width: 50%;
-}
-
-.col-l-7 {
-    width: 58.33%;
-}
-
-.col-l-8 {
-    width: 66.66%;
-}
-
-.col-l-9 {
-    width: 75%;
-}
-
-.col-l-10 {
-    width: 83.33%;
-}
-
-.col-l-11 {
-    width: 91.66%;
-}
-
-.col-l-12 {
-    width: 100%;
+/*    color: white;
+    background-color: #202020;*/
 }
 
 #navbar {
-    border: 1px solid white;
+    border: 1px solid black;
     height: 90%;
     position: fixed;
     text-align: center;
@@ -84,8 +34,8 @@ html, body {
 
 .button {
     border-radius: 15px;
-    background: #202020;
-    color: white;
+/*    background: #202020;
+    color: white;*/
     padding: 10px 60px;
     cursor: pointer;
     width: 80%;
