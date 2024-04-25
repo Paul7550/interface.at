@@ -18,7 +18,13 @@ function signin() {
       return;
     }
   }
-  createacc();
+
+  let result = document.getElementById("email").value.includes("@");
+  if (result == true) {
+    createacc();
+  } else {
+    document.getElementById("!email").hidden = false;
+  }
 }
 function createacc() {
   if (
@@ -57,6 +63,7 @@ function store() {
 function cancel() {
   document.getElementById("alert").hidden = true;
   document.getElementById("!cfmpassword").hidden = true;
+  document.getElementById("!email").hidden = true;
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
