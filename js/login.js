@@ -10,11 +10,11 @@ function load() {
   usercount = parseInt(getCookie("usercount"));
   password = JSON.parse(getCookie("passwords"));
 }
-
+function cancel() {
+  document.getElementById("notmatch").hidden = true;
+}
 function login() {
   for (i = 0; i <= usercount; i++) {
-    console.log(email[i]);
-    console.log(password[i]);
     if (
       document.getElementById("email").value == email[i] &&
       document.getElementById("password").value == password[i]
@@ -24,6 +24,9 @@ function login() {
       document.getElementById("link").href = "index.html";
       setCookie("logdinuser", i);
     }
+  }
+  if (getCookie("logdinuser") == "") {
+    document.getElementById("notmatch").hidden = false;
   }
 }
 

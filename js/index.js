@@ -1,15 +1,15 @@
-let logdin = getCookie("logdin");
+var logdin = getCookie("logdinuser");
 function load() {
   if (logdin != "") {
-    document.getElementById("signin").hidden = true;
     document.getElementById("logout").hidden = false;
+  } else {
+    document.getElementById("logout").hidden = true;
   }
 }
 function logout() {
   logdin = "";
   document.getElementById("logout").hidden = true;
-  document.getElementById("signin").hidden = false;
-  setCookie("logdin", logdin);
+  setCookie("logdinuser", logdin);
 }
 
 function setCookie(cname, cvalue) {

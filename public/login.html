@@ -7,8 +7,8 @@
     <script src="../js/login.js	"></script>
 </head>
 <body onload="load()">
-    <div class="alert" hidden>
-        <span id="emailinuse" class="closebtn">&times;</span>
+    <div class="alert" id="notmatch" hidden>
+        Tut mir leid, es scheint die falsche E-mail-Adresse oder das falsche passwort zu sein <button id="cancel" onclick="cancel()">x</button>
     </div>
     <div id="container">
         <div id="signupform">
@@ -19,7 +19,7 @@
             </div>
             <br>
             <div id="textinput">
-                <input id="email" placeholder="Email" type="text" class="spaceinput">
+                <input id="email" placeholder="E-mail" type="text" class="spaceinput">
                 <br>
                 <input id="password" placeholder="Password" type="password" class="spaceinput">
                 <span id="passwordnotmatch"></span>
