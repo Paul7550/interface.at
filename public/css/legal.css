@@ -1,0 +1,12 @@
+.text {
+    color: black;
+    padding-top: 3rem;
+    margin-left: 20rem;
+    /*
+    border: 1px solid black;
+    */
+}
+
+.bold {
+    font-weight: bold;
+}
