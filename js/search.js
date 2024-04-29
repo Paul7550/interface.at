@@ -5,19 +5,30 @@ let usercount = 0;
 var safeusername;
 var safeemail;
 var safepassword;
+let searchuser;
+let usernameX;
 function load() {
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
   password = JSON.parse(getCookie("passwords"));
 }
+function clear() {
+  document.getElementById("userX").hidden = true;
+}
 function search() {
-  if (document.getElementById("suche").value == username.includes) {
-    show();
+  searchuser = document.getElementById("suche").value;
+
+  for (i = 0; i < usercount; i++) {
+    if (username[i].includes(searchuser) == true) {
+      usernameX = username[i];
+      show();
+    }
   }
 }
 function show() {
-  document.getElementById("");
+  document.getElementById("userX").hidden = false;
+  document.getElementById("name").innerHTML = usernameX;
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";

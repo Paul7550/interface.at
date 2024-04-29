@@ -9,8 +9,12 @@
 </head>
 <body onload="load()">
     <label for="suche">Account suchen</label> 
-<input type="search" id="suche" oninput="search()" placeholder="Suche...">
-<div id="">
+<input type="search" onchange="clear()" id="suche" placeholder="Suche...">
+<button onclick="search()" id="search" disabled>search</button>
+<div id="userX" hidden>
+    <span id="name"></span>
+
+</div>
 
 </div>
     
