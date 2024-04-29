@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.button {
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
+    color: white;
+    padding: 10px 60px;
+    cursor: pointer;
+    width: auto;
+}
+
+.buttonedit {
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
+    color: white;
+    padding: 5px 30px;
+    cursor: pointer;
+    width: auto;
+}
+
+#profilepicture {
+    border: 1px solid black;
+    padding: 4rem;
+    width: 10px;
+    margin-left: 35rem;
+    position: relative;
+    top: 5rem;
+}
+
+#username {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 25rem;
+    margin-left: 45rem;
+    position: relative;
+    top: -4rem;
+}
+
+#editprofilebutton {
+    border: 1px solid black;
+    /*padding: 1rem;*/
+    width: 9rem;
+    margin-left: 71rem;
+    position: relative;
+    top: -6.05rem;
+}
+
+#postscount {
+
+}
