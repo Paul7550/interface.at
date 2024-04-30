@@ -49,5 +49,52 @@ html, body {
 }
 
 #postscount {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 9rem;
+    margin-left: 45rem;
+    position: relative;
+    top: -5.05rem;
+}
 
+#follower {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 9rem;
+    margin-left: 55rem;
+    position: relative;
+    top: -7.23rem;
+}
+
+#followed {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 9rem;
+    margin-left: 65rem;
+    position: relative;
+    top: -9.35rem;
+}
+
+#description {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 40rem;
+    margin-left: 35rem;
+    position: relative;
+    top: -3.05rem;
+}
+
+#line {
+    border-top: 1px solid black;
+    margin-left: 35rem;
+    width: 40rem;
+}
+
+#posts {
+    border: 1px solid black;
+    padding: 1rem;
+    margin-left: 35rem;
+    width: 40rem;
+    margin-top: 2rem;
+    height: 15rem;
 }
