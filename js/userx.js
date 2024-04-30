@@ -1,19 +1,18 @@
+let username = [];
+let password = [];
+let email = [];
+let usercount = 0;
 var logdin = getCookie("logdinuser");
 function load() {
-  if (logdin != "") {
-    document.getElementById("logout").hidden = false;
-    document.getElementById("login").hidden = true;
-  } else {
-    document.getElementById("logout").hidden = true;
-    document.getElementById("login").hidden = false;
-  }
+  username = JSON.parse(getCookie("usernames"));
+  email = JSON.parse(getCookie("emails"));
+  usercount = parseInt(getCookie("usercount"));
+  password = JSON.parse(getCookie("passwords"));
+  show();
 }
-function logout() {
-  logdin = "";
-  document.getElementById("logout").hidden = true;
-  setCookie("logdinuser", logdin);
+function show() {
+  document.getElementById("username").innerHTML = username[logdin];
 }
-
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
 }

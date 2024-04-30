@@ -7,6 +7,7 @@ var safeemail;
 var safepassword;
 let searchuser;
 let usernameX;
+let count = 0;
 function load() {
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
@@ -18,18 +19,15 @@ function clear() {
 }
 function search() {
   searchuser = document.getElementById("suche").value;
-
   for (i = 0; i < usercount; i++) {
     if (username[i].includes(searchuser) == true) {
-      usernameX = username[i];
-      show();
+      count++;
+      document.getElementById("userX").hidden = false;
+      document.getElementById(`name${count}`).innerHTML = username[i];
     }
   }
 }
-function show() {
-  document.getElementById("userX").hidden = false;
-  document.getElementById("name").innerHTML = usernameX;
-}
+
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
 }
