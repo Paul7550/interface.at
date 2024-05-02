@@ -2,8 +2,10 @@ let username = [];
 let password = [];
 let email = [];
 let usercount = 0;
+let userx;
 var logdin = getCookie("logdinuser");
 function load() {
+  userx = getCookie("userX");
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
@@ -11,7 +13,7 @@ function load() {
   show();
 }
 function show() {
-  document.getElementById("username").innerHTML = username[logdin];
+  document.getElementById("username").innerHTML = username[userx];
 }
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
