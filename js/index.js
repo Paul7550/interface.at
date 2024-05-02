@@ -8,6 +8,9 @@ function load() {
     document.getElementById("login").hidden = false;
   }
 }
+function profile() {
+  setCookie("userX", logdin);
+}
 function logout() {
   logdin = "";
   document.getElementById("logout").hidden = true;

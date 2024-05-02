@@ -26,19 +26,36 @@
         <div id="username">
 
         </div>
-        <div id="editprofilebutton">
-            <button class="buttonedit">Edit Profile</button>
+        <div id="editprofilebutton" hidden>
+            <button class="buttonedit" onclick="edit()">Edit Profile</button>
         </div>
         <div id="postscount">
+            <span id="postscounter">0</span>
+            <br>
+            <span>Beiträge</span>
 
         </div>
         <div id="follower">
+            <span id="followercounter">0</span>
+            <br>
+            <span>Follower</span>
 
         </div>
         <div id="followed">
-
+            <span id="followedcounter">0</span>
+            <br>
+            <span>Gefolgt</span>
+        </div>
+        <div id="contact">
+            <button>follow</button>
+            <button>message</button>
         </div>
         <div id="description">
+            <span id="des"></span>
+            <div id="editdes" hidden>
+                <input id="inputdes" ><button id="savedes" onclick="savedes()">submit</button>
+            </div>
+            
 
         </div>
         <div id="line"></div>
