@@ -3,6 +3,7 @@ function load() {
   if (logdin != "") {
     document.getElementById("logout").hidden = false;
     document.getElementById("login").hidden = true;
+    document.getElementById("userx").hidden = false;
   } else {
     document.getElementById("logout").hidden = true;
     document.getElementById("login").hidden = false;
@@ -15,6 +16,7 @@ function logout() {
   logdin = "";
   document.getElementById("logout").hidden = true;
   setCookie("logdinuser", logdin);
+  load();
 }
 
 function setCookie(cname, cvalue) {

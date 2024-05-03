@@ -47,6 +47,20 @@ html, body {
     position: relative;
     top: -6.05rem;
 }
+#backroundcolor{
+    border: 1px solid black;
+    width: 9rem;
+    margin-left: 45rem;
+    position: relative;
+    top: -5.0rem;
+}
+#url{
+    border: 1px solid black;
+    width: 9rem;
+    margin-left: 35rem;
+    position: relative;
+    top: 6.0rem; 
+}
 
 #postscount {
     border: 1px solid black;
@@ -80,7 +94,7 @@ html, body {
 #contact{
     border: 1px solid black;
     padding: 1rem;
-    width: 9rem;
+    width: 11rem;
     margin-left: 55rem;
     position: relative;
     top: -9.6rem;

@@ -20,14 +20,25 @@
             <br>
             <span class="navlinks spacer"><button onclick="logout()" id="logout" >Log Out</button></span>
         </nav>
+        <div id="profile">
         <div id="profilepicture">
+            <img   id="profileimg">
 
         </div>
+        <div id="url">
+            <input  placeholder="Bitte die url für dein profilbild eingeben" >
+            <button onclick="img()"></button>
+        </div>
+        
         <div id="username">
 
         </div>
         <div id="editprofilebutton" hidden>
             <button class="buttonedit" onclick="edit()">Edit Profile</button>
+        </div>
+        <div id="backroundcolor" hidden >
+            <input type="color" id="backround">
+            <button onclick="savecolor()">save</button>
         </div>
         <div id="postscount">
             <span id="postscounter">0</span>
@@ -47,7 +58,7 @@
             <span>Gefolgt</span>
         </div>
         <div id="contact">
-            <button>follow</button>
+            <button onclick="follow()">follow</button>
             <button>message</button>
         </div>
         <div id="description">
@@ -60,7 +71,7 @@
         </div>
         <div id="line"></div>
         <div id="posts">
-
+        </div>
         </div>
     </body>
 </html>
