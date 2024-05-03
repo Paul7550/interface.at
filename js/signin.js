@@ -60,6 +60,10 @@ function store() {
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
   setCookie("passwords", safepassword);
+  setCookie(`folowedlist${logdin}`, JSON.stringify([]));
+  setCookie(`userdes${logdin}`, JSON.stringify([]));
+  setCookie(`usercolor${logdin}`, JSON.stringify([]));
+  setCookie(`imgurl${logdin}`, JSON.stringify([]));
 }
 function cancel() {
   document.getElementById("alert").hidden = true;

@@ -10,7 +10,7 @@ let followedlistx = [];
 let imgurl = [];
 var logdin = getCookie("logdinuser");
 function load() {
-  //imgurl = JSON.parse(getCookie("imglist"));
+  imgurl = JSON.parse(getCookie("imglist"));
   userx = getCookie("userX");
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
