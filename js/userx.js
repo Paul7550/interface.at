@@ -10,16 +10,17 @@ let followedlistx = [];
 let imgurl = [];
 var logdin = getCookie("logdinuser");
 function load() {
-  imgurl = JSON.parse(getCookie("imglist"));
   userx = getCookie("userX");
+  userx -= 1;
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
   password = JSON.parse(getCookie("passwords"));
-  userdes = JSON.parse(getCookie("Userdes"));
-  usercolor = JSON.parse(getCookie("Usercolor"));
+  usercolor = JSON.parse(getCookie("usercolor"));
+  imgurl = JSON.parse(getCookie("imglist"));
+  userdes = JSON.parse(getCookie("userdes"));
 
-  if (userx == logdin) {
+  if (userx + 1 == logdin) {
     document.getElementById("editprofilebutton").hidden = false;
     document.getElementById("contact").hidden = true;
   }
@@ -35,9 +36,10 @@ function follow() {
   setCookie(`folowedlist${logdin}`, safefollowed);
 }
 function img() {
-  imgurl[logdin] = document.getElementById("url").value;
+  imgurl[userx] = document.getElementById("imgurl").value;
   let saveimg = JSON.stringify(imgurl);
-  setCookie(`imglist${logdin}`, saveimg);
+  setCookie("imglist", saveimg);
+  document.getElementById("imgurl").value = "";
   show();
 }
 function savecolor() {
@@ -56,7 +58,7 @@ function show() {
   document.getElementById("profileimg").src = imgurl[userx];
 }
 function savedes() {
-  userdes[logdin] = document.getElementById("inputdes").value;
+  userdes[userx] = document.getElementById("inputdes").value;
   let safeuserdes = JSON.stringify(userdes);
   setCookie("Userdes", safeuserdes);
   document.getElementById("editdes").hidden = true;

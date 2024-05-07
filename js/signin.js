@@ -57,13 +57,13 @@ function store() {
   safeusername = JSON.stringify(username);
   safeemail = JSON.stringify(email);
   safepassword = JSON.stringify(password);
+  setCookie("userdes", JSON.stringify([]));
+  setCookie("usercolor", JSON.stringify([]));
+  setCookie("imglist", JSON.stringify([]));
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
   setCookie("passwords", safepassword);
   setCookie(`folowedlist${logdin}`, JSON.stringify([]));
-  setCookie(`userdes${logdin}`, JSON.stringify([]));
-  setCookie(`usercolor${logdin}`, JSON.stringify([]));
-  setCookie(`imgurl${logdin}`, JSON.stringify([]));
 }
 function cancel() {
   document.getElementById("alert").hidden = true;
