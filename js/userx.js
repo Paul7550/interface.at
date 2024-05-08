@@ -17,7 +17,7 @@ function load() {
   usercolor = JSON.parse(getCookie("usercolor"));
   imgurl = JSON.parse(getCookie("imglist"));
   userdes = JSON.parse(getCookie("userdes"));
-  // followedlist = JSON.parse(getCookie(`followedlist${userx}`));
+  //followedlist = JSON.parse(getCookie(`followedlist${userx}`));
   userx++;
   if (userx == logdin) {
     document.getElementById("editprofilebutton").hidden = false;

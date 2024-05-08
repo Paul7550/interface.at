@@ -62,7 +62,7 @@ function store() {
   setCookie("userdes", JSON.stringify([]));
   setCookie("usercolor", JSON.stringify([]));
   setCookie("imglist", JSON.stringify([]));
-  //setCookie(`followedlist${userx}`, JSON.stringify([]));
+  //setCookie(`followedlist${logdin}`, JSON.stringify([]));
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
   setCookie("passwords", safepassword);
