@@ -5,6 +5,8 @@ let usercount = 0;
 var safeusername;
 var safeemail;
 var safepassword;
+var userx;
+
 function load() {
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
@@ -60,10 +62,10 @@ function store() {
   setCookie("userdes", JSON.stringify([]));
   setCookie("usercolor", JSON.stringify([]));
   setCookie("imglist", JSON.stringify([]));
+  //setCookie(`followedlist${userx}`, JSON.stringify([]));
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
   setCookie("passwords", safepassword);
-  setCookie(`folowedlist${logdin}`, JSON.stringify([]));
 }
 function cancel() {
   document.getElementById("alert").hidden = true;

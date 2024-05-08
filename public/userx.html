@@ -22,12 +22,13 @@
         </nav>
         <div id="profile">
         <div id="profilepicture">
-            <img id="profileimg">
+            <img id="profileimg" src="../sources/profileimg.jpg">
 
         </div>
-        <div id="url">
-            <input  placeholder="Bitte die url für dein profilbild eingeben" id="imgurl">
-            <button onclick="img()"></button>
+        <div id="url"  hidden>
+            <input  placeholder="Profilbild Url" id="imgurl">
+            <button onclick="img()">save</button>
+            <button onclick="clearimg()">clear img</button>
         </div>
         
         <div id="username">

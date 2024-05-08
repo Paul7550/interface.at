@@ -33,8 +33,11 @@ html, body {
     border: 1px solid black;
     width: 100px;
     height: 100px;
-}
 
+}
+#imgurl{
+    width: 100px;
+}
 
 #username {
     border: 1px solid black;

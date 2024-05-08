@@ -6,12 +6,10 @@ let userx;
 let userdes = [];
 let usercolor = [];
 let followedlist = [];
-let followedlistx = [];
 let imgurl = [];
 var logdin = getCookie("logdinuser");
 function load() {
   userx = getCookie("userX");
-  userx -= 1;
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
@@ -19,16 +17,19 @@ function load() {
   usercolor = JSON.parse(getCookie("usercolor"));
   imgurl = JSON.parse(getCookie("imglist"));
   userdes = JSON.parse(getCookie("userdes"));
-
-  if (userx + 1 == logdin) {
+  // followedlist = JSON.parse(getCookie(`followedlist${userx}`));
+  userx++;
+  if (userx == logdin) {
     document.getElementById("editprofilebutton").hidden = false;
     document.getElementById("contact").hidden = true;
   }
+  userx--;
   show();
 }
 function edit() {
   document.getElementById("editdes").hidden = false;
   document.getElementById("backroundcolor").hidden = false;
+  document.getElementById("url").hidden = false;
 }
 function follow() {
   followedlist[followedlist.length] = username[userx];
@@ -40,27 +41,45 @@ function img() {
   let saveimg = JSON.stringify(imgurl);
   setCookie("imglist", saveimg);
   document.getElementById("imgurl").value = "";
+  document.getElementById("url").hidden = true;
+  show();
+}
+function clearimg() {
+  imgurl[userx] = undefined;
+  let saveimg = JSON.stringify(imgurl);
+  setCookie("imglist", saveimg);
+  document.getElementById("url").hidden = true;
   show();
 }
 function savecolor() {
-  usercolor[logdin] = document.getElementById("backround").value;
+  usercolor[userx] = document.getElementById("backround").value;
   let safeusercolor = JSON.stringify(usercolor);
-  setCookie("Usercolor", safeusercolor);
+  setCookie("usercolor", safeusercolor);
   document.getElementById("backroundcolor").hidden = true;
-  document.getElementById("profile").style.backgroundColor = usercolor[logdin];
+  document.getElementById("profile").style.backgroundColor = usercolor[userx];
   show();
 }
 function show() {
   document.getElementById("profile").style.backgroundColor = usercolor[userx];
   document.getElementById("username").innerHTML = username[userx];
-  document.getElementById("des").innerHTML = userdes[userx];
-  document.getElementById("followedcounter").innerHTML = followedlistx[userx];
-  document.getElementById("profileimg").src = imgurl[userx];
+  if (userdes[userx] == undefined) {
+    document.getElementById("des").innerHTML = "no Bio yet";
+  } else {
+    document.getElementById("des").innerHTML = userdes[userx];
+  }
+  if (imgurl[userx] != undefined) {
+    document.getElementById("profileimg").src = imgurl[userx];
+  } else {
+    document.getElementById("profileimg").src = "../sources/profileimg.jpg";
+  }
+
+  document.getElementById("followedcounter").innerHTML = followedlist.length;
 }
+
 function savedes() {
   userdes[userx] = document.getElementById("inputdes").value;
   let safeuserdes = JSON.stringify(userdes);
-  setCookie("Userdes", safeuserdes);
+  setCookie("userdes", safeuserdes);
   document.getElementById("editdes").hidden = true;
   show();
 }

@@ -10,6 +10,7 @@ function load() {
   }
 }
 function profile() {
+  logdin--;
   setCookie("userX", logdin);
 }
 function logout() {
