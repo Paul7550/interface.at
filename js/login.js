@@ -22,6 +22,7 @@ function login() {
       document.getElementById("email").value = "";
       document.getElementById("password").value = "";
       document.getElementById("link").href = "index.html";
+      i++;
       setCookie("logdinuser", i);
     }
   }

@@ -17,7 +17,7 @@ function load() {
   usercolor = JSON.parse(getCookie("usercolor"));
   imgurl = JSON.parse(getCookie("imglist"));
   userdes = JSON.parse(getCookie("userdes"));
-  //followedlist = JSON.parse(getCookie(`followedlist${userx}`));
+  followedlist = JSON.parse(getCookie(`followedlist${userx}`));
   userx++;
   if (userx == logdin) {
     document.getElementById("editprofilebutton").hidden = false;
@@ -32,9 +32,9 @@ function edit() {
   document.getElementById("url").hidden = false;
 }
 function follow() {
-  followedlist[followedlist.length] = username[userx];
+  followedlist[followedlist.length] = userx;
   let safefollowed = JSON.stringify(followedlist);
-  setCookie(`folowedlist${logdin}`, safefollowed);
+  setCookie(`folowedlist${userx}`, safefollowed);
 }
 function img() {
   imgurl[userx] = document.getElementById("imgurl").value;
