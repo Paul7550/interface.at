@@ -60,10 +60,11 @@ function store() {
   safeusername = JSON.stringify(username);
   safeemail = JSON.stringify(email);
   safepassword = JSON.stringify(password);
+  setCookie(`followerlist${userx}`, JSON.stringify([]));
+  setCookie(`followedlist${usercount}`, JSON.stringify([]));
   setCookie("userdes", JSON.stringify([]));
   setCookie("usercolor", JSON.stringify([]));
   setCookie("imglist", JSON.stringify([]));
-  setCookie(`followedlist${userx}`, JSON.stringify([]));
   setCookie("emails", safeemail);
   setCookie("usernames", safeusername);
   setCookie("passwords", safepassword);

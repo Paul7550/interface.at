@@ -5,11 +5,13 @@ let usercount = 0;
 let userx;
 let userdes = [];
 let usercolor = [];
-let followedlist = [];
 let imgurl = [];
+let followedlistx = [];
+let followerlistx = [];
 var logdin = getCookie("logdinuser");
 function load() {
   userx = getCookie("userX");
+  followerlistx = JSON.parse(getCookie(`followerlist${userx}`));
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
   usercount = parseInt(getCookie("usercount"));
@@ -17,7 +19,6 @@ function load() {
   usercolor = JSON.parse(getCookie("usercolor"));
   imgurl = JSON.parse(getCookie("imglist"));
   userdes = JSON.parse(getCookie("userdes"));
-  followedlist = JSON.parse(getCookie(`followedlist${userx}`));
   userx++;
   if (userx == logdin) {
     document.getElementById("editprofilebutton").hidden = false;
@@ -30,11 +31,6 @@ function edit() {
   document.getElementById("editdes").hidden = false;
   document.getElementById("backroundcolor").hidden = false;
   document.getElementById("url").hidden = false;
-}
-function follow() {
-  followedlist[followedlist.length] = userx;
-  let safefollowed = JSON.stringify(followedlist);
-  setCookie(`folowedlist${userx}`, safefollowed);
 }
 function img() {
   imgurl[userx] = document.getElementById("imgurl").value;
@@ -49,6 +45,15 @@ function clearimg() {
   let saveimg = JSON.stringify(imgurl);
   setCookie("imglist", saveimg);
   document.getElementById("url").hidden = true;
+  show();
+}
+function follow() {
+  followerlistx[followerlistx.length] = userx;
+  let safefollowerlistx = JSON.stringify(followerlistx);
+  setCookie(`followerlist${userx}`, safefollowerlistx);
+  followedlistx[followedlistx.length] = logdin;
+  let safefollowedlistx = JSON.stringify(followedlistx);
+  setCookie(`followedlist${logdin}`, safefollowedlistx);
   show();
 }
 function savecolor() {
@@ -72,8 +77,8 @@ function show() {
   } else {
     document.getElementById("profileimg").src = "../sources/profileimg.jpg";
   }
-
-  document.getElementById("followedcounter").innerHTML = followedlist.length;
+  document.getElementById("followercounter").innerHTML = followerlistx.length;
+  document.getElementById("followedcounter").innerHTML = followedlistx.length;
 }
 
 function savedes() {
