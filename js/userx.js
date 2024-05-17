@@ -6,11 +6,12 @@ let userx;
 let userdes = [];
 let usercolor = [];
 let imgurl = [];
-let followedlistx = [];
 let followerlistx = [];
+let followedlistuser = [];
 var logdin = getCookie("logdinuser");
 function load() {
   userx = getCookie("userX");
+  followedlistuser = JSON.parse(getCookie(`followedlist${userx}`));
   followerlistx = JSON.parse(getCookie(`followerlist${userx}`));
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
@@ -51,10 +52,9 @@ function follow() {
   followerlistx[followerlistx.length] = userx;
   let safefollowerlistx = JSON.stringify(followerlistx);
   setCookie(`followerlist${userx}`, safefollowerlistx);
-  followedlistx[followedlistx.length] = logdin;
-  let safefollowedlistx = JSON.stringify(followedlistx);
-  setCookie(`followedlist${logdin}`, safefollowedlistx);
-  show();
+  followedlistuser[followedlistuser.length] = userx;
+  let safefollowerlistuser = JSON.stringify(followedlistuser);
+  setCookie(`followedlist${logdin - 1}`, safefollowerlistuser);
 }
 function savecolor() {
   usercolor[userx] = document.getElementById("backround").value;
@@ -78,7 +78,8 @@ function show() {
     document.getElementById("profileimg").src = "../sources/profileimg.jpg";
   }
   document.getElementById("followercounter").innerHTML = followerlistx.length;
-  document.getElementById("followedcounter").innerHTML = followedlistx.length;
+  document.getElementById("followedcounter").innerHTML =
+    followedlistuser.length;
 }
 
 function savedes() {
