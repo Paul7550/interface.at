@@ -3,29 +3,67 @@
     <head>
         <meta charset="UTF-8">
         <title>Interface</title>
-        <script src="../js/index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/mediaqueries.css">
     </head>
     <body onload="load()">
         <!--<a href="signin.html">
             <button id="signin">acc erstellen</button>
         </a>
             <button onclick="logout()" id="logout" hidden> log out</button>-->
-        <nav id="navbar" class="col-l-2">
-            <a href="index.html" class="navlinks spacer"><button class="button">Home</button></a>
+        <nav id="navbar">
+            <a href="index.html" class="navlinks spacer"><button class="button btn btn-primary">Home</button></a>
             <br>
-            <a href="search.html" class="navlinks "><button class="button">Search</button></a>
+            <a href="search.html" class="navlinks "><button class="button btn btn-primary">Search</button></a>
             <br>
-            <a href="create.html" class="navlinks "><button class="button">Create</button></a>
+            <a href="create.html" class="navlinks "><button class="button btn btn-primary">Create</button></a>
             <br>
-            <a href="login.html" class="navlinks "><button id="login" class="button">Login / Sign Up</button></a>
+            <a href="login.html" class="navlinks "><button id="login" class="button btn btn-primary">Login / Sign Up</button></a>
             <br>
-            <a href="userx.html" class="navlinks " id="profile"><button id="userx" class="button" onclick="profile()">Profile</button></a>
+            <a href="userx.html" class="navlinks " id="profile"><button id="userx" class="button btn btn-primary" onclick="profile()">Profile</button></a>
             <br>
-            <span class="navlinks"><button  id="logout" class="button" onclick="logout()"  >Log Out</button></span>
+            <span class="navlinks"><button  id="logout" class="button btn btn-primary" onclick="logout()"  >Log Out</button></span>
         </nav>
-    <div id="profile">
-    </div>
+
+        <div id="profilenavbar">
+
+        </div>
+        <div id="post">
+            <header>
+                <div id="profilepicture"></div>
+                <div id="username"></div>
+            </header>
+            <main>
+                <div id="image"></div>
+                <div id="description"></div>
+                <div id="date"></div>
+            </main>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-light navbar-light" id="footer">
+            <div class="container-fluid">
+                <a class="navbar-brand">Interface</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="legal/imprint.html">Imprint</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="legal/data-policy.html">Data-Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/index.js"></script>
     </body>
 </html>

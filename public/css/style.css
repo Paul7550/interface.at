@@ -32,10 +32,67 @@ html, body {
 }
 
 .button {
-    border-radius: 15px;
 /*    background: #202020;
     color: white;*/
     padding: 10px 60px;
     cursor: pointer;
     width: 80%;
+}
+
+#profilenavbar {
+    border: 1px solid black;
+    padding-bottom: 5rem;
+    margin-left: 258px;
+    margin-right: 6rem;
+}
+
+#post {
+    border: 1px solid black;
+    padding: 15rem;
+    margin: 10px 6rem 0 258px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+#profilepicture {
+    border: 1px solid black;
+    padding: 15px;
+    margin-right: 10px;
+}
+
+#username {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#image {
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#description {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#date {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
 }
