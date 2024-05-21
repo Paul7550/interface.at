@@ -47,21 +47,15 @@ html, body {
 
 #post {
     border: 1px solid black;
-    padding: 15rem;
+    width: 67.9rem;
+    height: 40rem;
     margin: 10px 6rem 0 258px;
-    display: flex;
-    justify-content: flex-start;
-}
-
-header {
-    display: flex;
-    align-items: center;
 }
 
 #profilepicture {
     border: 1px solid black;
-    padding: 15px;
-    margin-right: 10px;
+    padding: 2rem;
+    margin: 3rem 59rem 0 5rem;
 }
 
 #username {
@@ -69,16 +63,12 @@ header {
     padding: 15px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
 #image {
     border: 1px solid black;
     padding: 15px;
-    margin-bottom: 10px;
+    top: 0;
+    margin: 0 2rem 0 10rem;
+
 }
 
 #description {
