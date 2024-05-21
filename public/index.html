@@ -12,7 +12,7 @@
             <button id="signin">acc erstellen</button>
         </a>
             <button onclick="logout()" id="logout" hidden> log out</button>-->
-        <nav id="navbar">
+<!--        <nav id="navbar">
             <a href="index.html" class="navlinks spacer"><button class="button btn btn-primary">Home</button></a>
             <br>
             <a href="search.html" class="navlinks "><button class="button btn btn-primary">Search</button></a>
@@ -24,21 +24,54 @@
             <a href="userx.html" class="navlinks " id="profile"><button id="userx" class="button btn btn-primary" onclick="profile()">Profile</button></a>
             <br>
             <span class="navlinks"><button  id="logout" class="button btn btn-primary" onclick="logout()"  >Log Out</button></span>
+        </nav>-->
+
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Interface</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Interface</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="search.html">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="create.html">Create Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login / Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userx.html">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
 
         <div id="profilenavbar">
 
         </div>
         <div id="post">
-            <header>
                 <div id="profilepicture"></div>
                 <div id="username"></div>
-            </header>
-            <main>
                 <div id="image"></div>
                 <div id="description"></div>
                 <div id="date"></div>
-            </main>
         </div>
 
         <div class="container">
