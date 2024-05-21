@@ -45,40 +45,50 @@ html, body {
     margin-right: 6rem;
 }
 
-#post {
+.post {
     border: 1px solid black;
     width: 67.9rem;
     height: 40rem;
     margin: 10px 6rem 0 258px;
 }
 
-#profilepicture {
+.profilepicture {
     border: 1px solid black;
     padding: 2rem;
     margin: 3rem 59rem 0 5rem;
+    display: flex;
+    flex-direction: row;
 }
 
-#username {
+.username {
     border: 1px solid black;
     padding: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
-#image {
+.image {
     border: 1px solid black;
     padding: 15px;
     top: 0;
     margin: 0 2rem 0 10rem;
+    display: flex;
+    flex-direction: row;
 
 }
 
-#description {
+.description {
     border: 1px solid black;
     padding: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
-#date {
+.date {
     border: 1px solid black;
     padding: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
 #footer {
