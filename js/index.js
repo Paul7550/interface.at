@@ -19,7 +19,11 @@ function logout() {
   setCookie("logdinuser", logdin);
   load();
 }
-
+function post() {
+  const node = document.createElement("div");
+  node.classList.add("rechts");
+  document.getElementById("liste1").appendChild(node);
+}
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
 }
