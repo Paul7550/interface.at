@@ -22,7 +22,14 @@ function search() {
     if (username[i].includes(searchuser) == true) {
       displayuser[count] = username[i];
       count++;
-      document.getElementById("userX").hidden = false;
+      const node = document.createElement("div");
+      const link = document.createElement("a");
+      const name = document.createElement("span");
+      link.id = `link${count}`;
+      node.appendChild(link);
+      name.id = `name${count}`;
+      link.appendChild(name);
+      document.getElementById("userX").appendChild(node);
       document.getElementById(`name${count}`).innerHTML = username[i];
       document.getElementById(`link${count}`).href = "../public/userx.html";
     }
