@@ -46,6 +46,7 @@ html, body {
     padding-bottom: 5rem;
     margin-left: 2rem;
     margin-right: 6rem;
+    margin-top: 4rem;
 }
 
 .post {
@@ -65,32 +66,32 @@ html, body {
     padding: 0;
 }
 
-.username {
-    border: 1px solid black;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-}
-
 .image {
     border: 1px solid black;
+    padding-left: 53rem;
     margin-left: 5rem;
-    width: 10rem;
-    height: 30rem;
+    width: 50rem;
+    height: 20rem;
+}
+
+.username {
+    border: 1px solid black;
+    height: 2rem;
+    margin: 18rem 45rem 2rem 5rem;
 }
 
 .description {
     border: 1px solid black;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
+    height: 10rem;
+    width: 58rem;
+    margin-left: 5rem;
 }
 
 .date {
     border: 1px solid black;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
+    margin-left: 20rem;
+    width: 10rem;
+    height: 2rem;
 }
 
 #footer {
