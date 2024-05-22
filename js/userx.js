@@ -75,7 +75,8 @@ function show() {
   if (imgurl[userx] != undefined) {
     document.getElementById("profileimg").src = imgurl[userx];
   } else {
-    document.getElementById("profileimg").src = "../sources/profileimg.jpg";
+    document.getElementById("profileimg").src =
+      "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png";
   }
   document.getElementById("followercounter").innerHTML = followerlistx.length;
   document.getElementById("followedcounter").innerHTML =
