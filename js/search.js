@@ -28,6 +28,9 @@ function search() {
       link.id = `link${count}`;
       node.appendChild(link);
       name.id = `name${count}`;
+      node.addEventListener("click", (event) => {
+        userX(count);
+      });
       link.appendChild(name);
       document.getElementById("userX").appendChild(node);
       document.getElementById(`name${count}`).innerHTML = username[i];
@@ -37,23 +40,7 @@ function search() {
 }
 
 function userX(greeting) {
-  switch (displayuser[greeting]) {
-    case displayuser[0]:
-      setCookie("userX", 0);
-      break;
-    case displayuser[1]:
-      setCookie("userX", 1);
-      break;
-    case displayuser[2]:
-      setCookie("userX", 2);
-      break;
-    case displayuser[3]:
-      setCookie("userX", 3);
-      break;
-    case displayuser[4]:
-      setCookie("userX", 4);
-      break;
-  }
+  setCookie("userX", greeting - 1);
 }
 
 function setCookie(cname, cvalue) {
