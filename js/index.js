@@ -20,10 +20,27 @@ function logout() {
   load();
 }
 function post() {
-  const node = document.createElement("div");
-  node.classList.add("rechts");
-  document.getElementById("liste1").appendChild(node);
+  const main = document.createElement("div");
+  main.classList.add("post col-sm-12");
+  const profilepicture = document.createElement("div");
+  profilepicture.classList.add("profilepicture");
+  const image = document.createElement("img");
+  image.classList.add("image");
+  const username = document.createElement("div");
+  username.classList.add("username");
+  const date = document.createElement("div");
+  date.classList.add("date");
+  const description = document.createElement("div");
+  description.classList.add("description");
+  profilepicture.appendChild(image);
+  main.appendChild(profilepicture);
+  username.appendChild(date);
+  main.appendChild(username);
+  main.appendChild(description);
+  main.appendChild(username);
+  document.getElementById("row").appendChild(main);
 }
+
 function setCookie(cname, cvalue) {
   document.cookie = cname + "=" + cvalue + ";";
 }
