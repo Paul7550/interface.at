@@ -21,7 +21,8 @@ function logout() {
 }
 function post() {
   const main = document.createElement("div");
-  main.classList.add("post col-sm-12");
+  main.classList.add("post");
+  main.classList.add("col-sm-12");
   const profilepicture = document.createElement("div");
   profilepicture.classList.add("profilepicture");
   const image = document.createElement("img");
@@ -37,8 +38,7 @@ function post() {
   username.appendChild(date);
   main.appendChild(username);
   main.appendChild(description);
-  main.appendChild(username);
-  document.getElementById("row").appendChild(main);
+  document.getElementById("posts").appendChild(main);
 }
 
 function setCookie(cname, cvalue) {
