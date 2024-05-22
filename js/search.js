@@ -9,6 +9,14 @@ let searchuser;
 let userx = 0;
 let count = 0;
 let displayuser = [];
+
+var input = document.getElementById("myInput");
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
 function load() {
   username = JSON.parse(getCookie("usernames"));
   email = JSON.parse(getCookie("emails"));
