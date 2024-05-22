@@ -41,7 +41,7 @@ html, body {
 #profilenavbar {
     border: 1px solid black;
     padding-bottom: 5rem;
-    margin-left: 258px;
+    margin-left: 2rem;
     margin-right: 6rem;
 }
 
@@ -49,15 +49,17 @@ html, body {
     border: 1px solid black;
     width: 67.9rem;
     height: 40rem;
-    margin: 10px 6rem 0 258px;
+    margin: 10px 6rem 0 2rem;
 }
 
 .profilepicture {
     border: 1px solid black;
-    padding: 2rem;
-    margin: 3rem 59rem 0 5rem;
+    margin: 3rem 59rem 2rem 5rem;
     display: flex;
     flex-direction: row;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
 }
 
 .username {
@@ -69,12 +71,9 @@ html, body {
 
 .image {
     border: 1px solid black;
-    padding: 15px;
-    top: 0;
-    margin: 0 2rem 0 10rem;
-    display: flex;
-    flex-direction: row;
-
+    margin-left: 5rem;
+    width: 10rem;
+    height: 30rem;
 }
 
 .description {
