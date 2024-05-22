@@ -7,15 +7,25 @@
         <link rel="stylesheet" href="css/signin.css">
     </head>
     <body onload="load()">
-    <div class="alert" id="alert" hidden>
-        Diese Email wurde bereits vergeben <button id="cancel" onclick="cancel()">x</button>
+
+    <div class="alert alert-danger " id="alert" role="alert" hidden>
+        Diese E-Mail wurde bereits vergeben. <button id="cancel" onclick="cancel()">x</button>
     </div>
-    <div class="alert" id="!cfmpassword" hidden>
+    <div class="alert alert-danger " id="!cfmpassword" role="alert" hidden>
+        Die Passwörter stimmen nicht überein. <button id="cancel" onclick="cancel()">x</button>
+    </div>
+    <div class="alert alert-danger " id="!email" role="alert">
+        Diese E-Mail ist ungültig. <button id="cancel" onclick="cancel()">x</button>
+    </div>
+<!--    <div class="alert1" id="alert" hidden>
+        Diese Email wurde bereits vergeben <button id="cancel" onclick="cancel()">x</button>
+    </div>-->
+<!--    <div class="alert1" id="!cfmpassword" hidden>
         Die Passwörter stimmen nicht überein<button id="cancel" onclick="cancel()">x</button>
-   </div>
-   <div class="alert" id="!email" hidden>
+   </div>-->
+<!--   <div class="alert1" id="!email" hidden>
     Diese Email ist ungültig <button id="cancel" onclick="cancel()">x</button>
-</div>
+</div>-->
     <div id="back">
         <a href="index.html"><button id="backbutton"><span class="line-md--home-twotone-alt"></span></button></a>
     </div>
