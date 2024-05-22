@@ -77,19 +77,19 @@ html, body {
 .username {
     border: 1px solid black;
     height: 2rem;
-    margin: 18rem 45rem 2rem 5rem;
+    margin: 18rem 45rem 2rem 10rem;
 }
 
 .description {
     border: 1px solid black;
     height: 10rem;
-    width: 58rem;
-    margin-left: 5rem;
+    width: 54rem;
+    margin-left: 10rem;
 }
 
 .date {
     border: 1px solid black;
-    margin-left: 20rem;
+    margin-left: 12rem;
     width: 10rem;
     height: 2rem;
 }
