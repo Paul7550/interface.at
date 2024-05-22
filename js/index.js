@@ -1,4 +1,8 @@
 var logdin = getCookie("logdinuser");
+let followedlistuser = [];
+let userx = logdin - 1;
+let count;
+followedlistuser = JSON.parse(getCookie(`followedlist${userx}`));
 function load() {
   if (logdin != "") {
     document.getElementById("logout").hidden = false;
@@ -7,11 +11,31 @@ function load() {
   } else {
     document.getElementById("logout").hidden = true;
     document.getElementById("login").hidden = false;
+    document.getElementById("userx").hidden = true;
+  }
+  if (followedlistuser.length > 0) {
+    document.getElementById("noFriends").hidden = true;
   }
 }
+function friends() {
+  for (i = 0; i < followedlistuser.length; i++) {
+    const link = document.createElement("a");
+    const img = document.createElement("img");
+    link.id = "link";
+    img.classList.add("profilepic");
+    link.appendChild(img);
+    link.addEventListener("click", (event) => {
+      userX(followedlistuser[i]);
+    });
+    document.getElementById("profilenavbar").appendChild(link);
+    document.getElementById("link").href = "userx.html";
+  }
+}
+function userX(greeting) {
+  setCookie("userX", greeting - 1);
+}
 function profile() {
-  logdin--;
-  setCookie("userX", logdin);
+  setCookie("userX", logdin - 1);
 }
 function logout() {
   logdin = "";

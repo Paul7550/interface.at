@@ -98,3 +98,8 @@ html, body {
     position: fixed;
     bottom: 0;
 }
+.profilepic{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
