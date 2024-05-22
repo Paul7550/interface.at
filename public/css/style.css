@@ -37,7 +37,10 @@ html, body {
     cursor: pointer;
     width: 80%;
 }
-
+.navpic{
+    height: 50px;
+    width: 50px;
+}
 #profilenavbar {
     border: 1px solid black;
     padding-bottom: 5rem;
