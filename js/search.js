@@ -30,19 +30,24 @@ function search() {
       displayuser[count] = username[i];
       count++;
       document.getElementById("userX").hidden = false;
-      const node = document.createElement("div");
+      const profile = document.createElement("div");
+      const pic = document.createElement("div");
+      const name = document.createElement("div");
       const link = document.createElement("a");
-      const name = document.createElement("span");
+      profile.classList.add("profile");
+      pic.classList.add("profilepicture");
+      name.classList.add("username");
       link.id = `link${count}`;
-      node.appendChild(link);
-      name.id = `name${count}`;
-      link.appendChild(name);
+      link.classList.add("name");
       let countX = i;
-      node.addEventListener("click", (event) => {
+      name.appendChild(link);
+      pic.appendChild(name);
+      profile.appendChild(pic);
+      name.addEventListener("click", (event) => {
         userX(countX);
       });
-      document.getElementById("userX").appendChild(node);
-      document.getElementById(`name${count}`).innerHTML = username[i];
+      document.getElementById("userX").appendChild(profile);
+      document.getElementById(`link${count}`).innerHTML = username[i];
       document.getElementById(`link${count}`).href = "../public/userx.html";
     }
   }
