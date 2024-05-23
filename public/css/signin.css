@@ -102,10 +102,10 @@ html, body {
     width: 4rem;
 }
 
-.alert {
+.alert1 {
     padding: 10px 5px 10px 500px;
-    background-color: #f44336; /* Red */
-    color: white;
+/*    background-color: #f44336; !* Red *!
+    color: white;*/
     margin: 15px 10px 0px 10px;
     float: right;
     position: absolute;

@@ -1,0 +1,19 @@
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.image {
+    border: 1px solid black;
+    width: 40rem;
+    height: 20rem;
+    margin: 2rem;
+    margin-inline: auto;
+}
+
+.description {
+    border: 1px solid black;
+    width: 40rem;
+    height: 15rem;
+    margin-inline: auto;
+}
