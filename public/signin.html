@@ -1,58 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Signin</title>
-        <script src="../js/signin.js"></script>
-        <link rel="stylesheet" href="css/signin.css">
-    </head>
-    <body onload="load()">
-
-    <div class="alert alert-danger " id="alert" role="alert" hidden>
-        Diese E-Mail wurde bereits vergeben. <button id="cancel" onclick="cancel()">x</button>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signin</title>
+    <script src="../js/signin.js"></script>
+    <link rel="stylesheet" href="css/signin.css" />
+  </head>
+  <body onload="load()">
+    <div class="alert alert-danger" id="alert" role="alert" hidden>
+      Diese E-Mail wurde bereits vergeben.
+      <button id="cancel" onclick="cancel()">x</button>
     </div>
-    <div class="alert alert-danger " id="!cfmpassword" role="alert" hidden>
-        Die Passwörter stimmen nicht überein. <button id="cancel" onclick="cancel()">x</button>
+    <div class="alert alert-danger" id="!cfmpassword" role="alert" hidden>
+      Die Passwörter stimmen nicht überein.
+      <button id="cancel" onclick="cancel()">x</button>
     </div>
-    <div class="alert alert-danger " id="!email" role="alert">
-        Diese E-Mail ist ungültig. <button id="cancel" onclick="cancel()">x</button>
+    <div class="alert alert-danger" id="!email" role="alert" hidden>
+      Diese E-Mail ist ungültig.
+      <button id="cancel" onclick="cancel()">x</button>
     </div>
-<!--    <div class="alert1" id="alert" hidden>
+    <!--    <div class="alert1" id="alert" hidden>
         Diese Email wurde bereits vergeben <button id="cancel" onclick="cancel()">x</button>
     </div>-->
-<!--    <div class="alert1" id="!cfmpassword" hidden>
+    <!--    <div class="alert1" id="!cfmpassword" hidden>
         Die Passwörter stimmen nicht überein<button id="cancel" onclick="cancel()">x</button>
    </div>-->
-<!--   <div class="alert1" id="!email" hidden>
+    <!--   <div class="alert1" id="!email" hidden>
     Diese Email ist ungültig <button id="cancel" onclick="cancel()">x</button>
 </div>-->
     <div id="back">
-        <a href="index.html"><button id="backbutton"><span class="line-md--home-twotone-alt"></span></button></a>
+      <a href="index.html"
+        ><button id="backbutton">
+          <span class="line-md--home-twotone-alt"></span></button
+      ></a>
     </div>
-        <div id="container">
-            <div id="signupform">
-                <h1 class="title">Signup Form</h1>
-                <div class="wrapper">
-                    <a href="login.html"><button class="button">Login</button></a>
-                    <a href="signin.html"><button class="button" id="space">Signup</button></a>
-                </div>
-                <br>
-                <div id="textinput">
-                    <input id="email" placeholder="E-Mail" type="email" class="spaceinput">
-                    <span id="emailinuse"></span>
-                    <br>
-                    <input id="username" placeholder="Username" type="text" class="spaceinput">
-                    <br>
-                    <input id="password" placeholder="Password" type="password" class="spaceinput">
-                    <span id="passwordnotmatch"></span>
-                    <br>
-                    <input id="cfmpassword" placeholder="Confirm password" type="password" class="spaceinput">
-                    <br>
-                    <div>
-                        <a id="link"><button class="signupbutton" id="link" onclick="signin()">Create Account</button></a>
-                    </div>
-                </div> <!--Textinput-->
-            </div> <!--Signupform-->
-        </div> <!--Container-->
-    </body>
+    <div id="container">
+      <div id="signupform">
+        <h1 class="title">Signup Form</h1>
+        <div class="wrapper">
+          <a href="login.html"><button class="button">Login</button></a>
+          <a href="signin.html"
+            ><button class="button" id="space">Signup</button></a
+          >
+        </div>
+        <br />
+        <div id="textinput">
+          <input
+            id="email"
+            placeholder="E-Mail"
+            type="email"
+            class="spaceinput"
+          />
+          <span id="emailinuse"></span>
+          <br />
+          <input
+            id="username"
+            placeholder="Username"
+            type="text"
+            class="spaceinput"
+          />
+          <br />
+          <input
+            id="password"
+            placeholder="Password"
+            type="password"
+            class="spaceinput"
+          />
+          <span id="passwordnotmatch"></span>
+          <br />
+          <input
+            id="cfmpassword"
+            placeholder="Confirm password"
+            type="password"
+            class="spaceinput"
+          />
+          <br />
+          <div>
+            <a id="link"
+              ><button class="signupbutton" id="link" onclick="signin()">
+                Create Account
+              </button></a
+            >
+          </div>
+        </div>
+        <!--Textinput-->
+      </div>
+      <!--Signupform-->
+    </div>
+    <!--Container-->
+  </body>
 </html>

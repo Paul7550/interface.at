@@ -26,7 +26,7 @@ function search() {
   searchuser = document.getElementById("suche").value;
   let count = 0;
   for (i = 0; i < usercount; i++) {
-    if (username[i].includes(searchuser)) {
+    if (username[i].toLowerCase().includes(searchuser.toLowerCase())) {
       displayuser[count] = username[i];
       count++;
       document.getElementById("userX").hidden = false;
