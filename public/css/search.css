@@ -3,3 +3,17 @@
     background-color: gray;
     */
 }
+
+.profile {
+    border: 1px solid black;
+    width: 40rem;
+    height: 5rem;
+    margin-inline: auto;
+    margin-top: 3rem;
+}
+
+.button1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
