@@ -38,8 +38,8 @@ html, body {
     width: 80%;
 }
 .navpic{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 #profilenavbar {
     border: 1px solid black;
@@ -101,5 +101,5 @@ html, body {
 .profilepic{
     border: 1px solid black;
     width: 100px;
-    height: 100px;
+    height: 10  0px;
 }
