@@ -155,3 +155,10 @@
 .sidebar ul {
     padding: 0;
 }
+#usernamenav{
+    margin-top: 16px;
+   
+}
+#userlink{
+    text-decoration: none;
+}

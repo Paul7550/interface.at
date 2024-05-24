@@ -3,7 +3,7 @@ let password = [];
 let email = [];
 let usercount = 0;
 var safeusername;
-var safeemail;
+var safemail;
 var safepassword;
 let searchuser;
 let userx = 0;
