@@ -17,6 +17,11 @@ function load() {
         document.getElementById("userx").hidden = true;
     }
     document.getElementById("usernamenav").innerHTML = username[userx];
+    if (imgurl[userx] != undefined) {
+        document.getElementById(`navimg`).src = imgurl[userx];
+    } else {
+        document.getElementById(`navimg`).src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png ";
+    }
 }
 function friends() {
     if (followedlistuser.length > 0) {
