@@ -3,48 +3,103 @@
     <head>
         <meta charset="UTF-8">
         <title>Impressum</title>
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
         <link rel="stylesheet" href="../css/legal.css">
+        <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <nav id="navbar" class="col-l-2">
-            <a href="index.html" class="navlinks spacer"><button class="button">Home</button></a>
-            <br>
-            <a href="search.html" class="navlinks spacer"><button class="button">Search</button></a>
-            <br>
-            <a href="create.html" class="navlinks spacer"><button class="button">Create</button></a>
-            <br>
-            <a href="login.html" class="navlinks spacer"><button class="button">Login / Sign Up</button></a>
-            <br>
-        </nav>
-        <div class="text">
-            <p class="bold">Informationspflicht laut §5 E-Commerce Gesetz und Offenlegungspflicht laut §25 Mediengesetz</p>
-            <br>
-            <p>Paul Albrecht & Tim Neumann</p>
-            <br>
-            <p>Lilienweg 10/1</p>
-            <p>2203 Putzing am See</p>
-            <p>Österreich</p>
-            <br>
-            <p>Tel: 0043 (0) 660 / 1729317</p>
-            <p>E-Mail: tim.neumann@viennax.at</p>
-            <p id="redtext">Das unangemeldete Aufsuchen der privaten Adresse wird als Hausfriedensbruch gedeutet und unter polizeilicher Berufung ohne Ausnahme zur Anzeige gebracht.</p>
-            <br>
-
-            <p class="bold">Copyright & Urheberrechtshinweis</p>
-            <p>Alle Inhalte dieser Webpräsenz, insbesondere Texte, Fotografien und Grafiken, sind urheberrechtlich geschützt. Das Urheberrecht liegt, soweit nicht ausdrücklich anders gekennzeichnet, bei der im Impressum angeführten natürlichen bzw. juristischen Person. Bitte fragen Sie uns, falls Sie die Inhalte dieses Internetangebotes verwenden möchten.</p>
-            <p>Unter der „Creative Commons“-Lizenz“ veröffentlichte Inhalte, sind als solche gekennzeichnet. Sie dürfen entsprechend den angegebenen Lizenzbedingungen verwendet werden.</p>
-            <p>Wer gegen das Urheberrecht verstößt (z.B. Bilder oder Texte unerlaubt kopiert), macht sich gem. UrhG strafbar, wird unter Umständen kostenpflichtig abgemahnt (mindestens EUR 500,-) und muss Schadensersatz leisten.</p>
-
-            <p class="bold">Haftungsausschluss für ausgehende Links</p>
-            <p>Diese Webpräsenz enthält, so wie viele andere Webseiten ebenfalls, so genannte Links auf andere, fremde Webpräsenzen und Inhalte. Das wird als Urgedanke des Internets und des weltweiten Informationsaustauschs als gang und gäbe angesehen. Rechtlich und technisch gesehen haben wir als Betreiber unserer Webseite keinen Einfluss auf die Gestaltung sowie den Inhalt der verlinkten Webpräsenzen. Aus diesem Grund können wir zu keinem Zeitpunkt für diese Webpräsenzen in irgendeiner Art und Weise Haftung oder Gewähr übernehmen, da diese im Verantwortungsbereich des jeweiligen Betreibers angesiedelt ist.</p>
-            <p>Zum Zeitpunkt der Verlinkung wurden die fremden Inhalte auf Funktionalität, rechtswidrige Inhalte sowie uns möglich auf Schadsoftware überprüft. Als Indiz finden Sie bei einigen Links einen Datumsstempel der auf den Zeitpunkt der gesetzten Verlinkung hinweist. Nichts desto trotz sind wir bemüht unsere Besucher vor rechtswidrigen Inhalten und Schadsoftware zu schützen weshalb wir stichprobenartig die gesetzten Links in wiederkehrenden Intervallen untersuchen. Bei etwaigen Rechtsverletzungen werden die gesetzten Links selbstverständlich umgehend entfernt.</p>
-            <p>Sollten Sie einen derartigen Link vor unserer Überprüfung gefunden haben, so bitten wir um umgehende Benachrichtigung an die im Impressum angezeigten Kontaktdaten. Bitte übermitteln Sie uns dabei den Link unserer Webseite die den fragwürdigen Verweis enthält, sowie die Art der Kennzeichnung (a) rechtwidriger Inhalt, b) Schadsoftware oder c) inaktiver Inhalt bzw. Verweis).</p>
-
-            <p class="bold">Ihre Rechte</p>
-            <p>Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der oben genannten E-Mail-Adresse oder der Datenschutzbehörde beschweren.</p>
-            <br>
-            <p>Stand: 30.04.2024 09:03</p>
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class="bx bxl-codepen"></i>
+                    <span>Interface</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="../../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png" id="navimg" alt="test" class="user-img">
+                <div>
+                    <p class="bold" id="usernamenav"></p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-shopping-bag"></i>
+                        <span class="nav-item">Products</span>
+                    </a>
+                    <span class="tooltip">Products</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-list-check"></i>
+                        <span class="nav-item">Categories</span>
+                    </a>
+                    <span class="tooltip">Categories</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-cog"></i>
+                        <span class="nav-item">Settings</span>
+                    </a>
+                    <span class="tooltip">Settings</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-log-out"></i>
+                        <span class="nav-item">Logout</span>
+                    </a>
+                    <span class="tooltip">Logout</span>
+                </li>
+            </ul>
         </div>
+        <div class="main-content">
+            <div class="container">
+                <div class="text">
+                    <p class="bold">Informationspflicht laut §5 E-Commerce Gesetz und Offenlegungspflicht laut §25 Mediengesetz</p>
+                    <br>
+                    <p>Paul Albrecht & Tim Neumann</p>
+                    <br>
+                    <p>Lilienweg 10/1</p>
+                    <p>2203 Putzing am See</p>
+                    <p>Österreich</p>
+                    <br>
+                    <p>Tel: 0043 (0) 660 / 1729317</p>
+                    <p>E-Mail: tim.neumann@viennax.at</p>
+                    <br>
+                    <p id="redtext">Das unangemeldete Aufsuchen der privaten Adresse wird als Hausfriedensbruch gedeutet und unter polizeilicher Berufung ohne Ausnahme zur Anzeige gebracht.</p>
+                    <br>
+                    <br>
+
+                    <p class="bold">Copyright & Urheberrechtshinweis</p>
+                    <p>Alle Inhalte dieser Webpräsenz, insbesondere Texte, Fotografien und Grafiken, sind urheberrechtlich geschützt. Das Urheberrecht liegt, soweit nicht ausdrücklich anders gekennzeichnet, bei der im Impressum angeführten natürlichen bzw. juristischen Person. Bitte fragen Sie uns, falls Sie die Inhalte dieses Internetangebotes verwenden möchten.</p>
+                    <p>Unter der „Creative Commons“-Lizenz“ veröffentlichte Inhalte, sind als solche gekennzeichnet. Sie dürfen entsprechend den angegebenen Lizenzbedingungen verwendet werden.</p>
+                    <p>Wer gegen das Urheberrecht verstößt (z.B. Bilder oder Texte unerlaubt kopiert), macht sich gem. UrhG strafbar, wird unter Umständen kostenpflichtig abgemahnt (mindestens EUR 500,-) und muss Schadensersatz leisten.</p>
+
+                    <br>
+                    <p class="bold">Haftungsausschluss für ausgehende Links</p>
+                    <p>Diese Webpräsenz enthält, so wie viele andere Webseiten ebenfalls, so genannte Links auf andere, fremde Webpräsenzen und Inhalte. Das wird als Urgedanke des Internets und des weltweiten Informationsaustauschs als gang und gäbe angesehen. Rechtlich und technisch gesehen haben wir als Betreiber unserer Webseite keinen Einfluss auf die Gestaltung sowie den Inhalt der verlinkten Webpräsenzen. Aus diesem Grund können wir zu keinem Zeitpunkt für diese Webpräsenzen in irgendeiner Art und Weise Haftung oder Gewähr übernehmen, da diese im Verantwortungsbereich des jeweiligen Betreibers angesiedelt ist.</p>
+                    <p>Zum Zeitpunkt der Verlinkung wurden die fremden Inhalte auf Funktionalität, rechtswidrige Inhalte sowie uns möglich auf Schadsoftware überprüft. Als Indiz finden Sie bei einigen Links einen Datumsstempel der auf den Zeitpunkt der gesetzten Verlinkung hinweist. Nichts desto trotz sind wir bemüht unsere Besucher vor rechtswidrigen Inhalten und Schadsoftware zu schützen weshalb wir stichprobenartig die gesetzten Links in wiederkehrenden Intervallen untersuchen. Bei etwaigen Rechtsverletzungen werden die gesetzten Links selbstverständlich umgehend entfernt.</p>
+                    <p>Sollten Sie einen derartigen Link vor unserer Überprüfung gefunden haben, so bitten wir um umgehende Benachrichtigung an die im Impressum angezeigten Kontaktdaten. Bitte übermitteln Sie uns dabei den Link unserer Webseite die den fragwürdigen Verweis enthält, sowie die Art der Kennzeichnung (a) rechtwidriger Inhalt, b) Schadsoftware oder c) inaktiver Inhalt bzw. Verweis).</p>
+
+                    <br>
+                    <p class="bold">Ihre Rechte</p>
+                    <p>Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der oben genannten E-Mail-Adresse oder der Datenschutzbehörde beschweren.</p>
+                    <br>
+                    <p>Stand: 30.04.2024 09:03</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://kit.fontawesome.com/4889bb9c2b.js" crossorigin="anonymous"></script>
+        <script src="../../js/navbar.js"></script>
     </body>
 </html>
