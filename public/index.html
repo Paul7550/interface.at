@@ -1,121 +1,96 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Interface</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body onload="load()">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand">Interface</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                ><img
-                  class="navpic"
-                  src="../sources/home_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search.html"
-                ><img
-                  class="navpic"
-                  src="../sources/search_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />Search</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="create.html"
-                ><img
-                  class="navpic"
-                  src="../sources/add_box_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />Create Post</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html" id="login"
-                ><img
-                  class="navpic"
-                  src="../sources/person_add_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />Login / Sign Up</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="userx.html"
-                onclick="profile()"
-                id="userx"
-                ><img
-                  class="navpic"
-                  src="../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />Profile</a
-              >
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" onclick="logout()" id="logout">
-                <img
-                  class="navpic"
-                  src="../sources/logout_24dp_FILL0_wght400_GRAD0_opsz24.png"
-                />
-                Logout
-              </button>
-            </li>
-          </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Interface</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body onload="load()">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Interface</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"
+                                ><img class="navpic" src="../sources/home_24dp_FILL0_wght400_GRAD0_opsz24.png" />Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html"
+                                ><img
+                                    class="navpic"
+                                    src="../sources/search_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                                />Search</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="create.html"
+                                ><img
+                                    class="navpic"
+                                    src="../sources/add_box_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                                />Create Post</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html" id="login"
+                                ><img class="navpic" src="../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png" />Login
+                                / Sign Up</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userx.html" onclick="profile()" id="userx"
+                                ><img
+                                    class="navpic"
+                                    src="../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png"
+                                />Profile</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" onclick="logout()" id="logout">
+                                <img class="navpic" src="../sources/logout_24dp_FILL0_wght400_GRAD0_opsz24.png" />
+                                Logout
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="profilenavbar">
+            <span id="friends">Folge Leuten um ihre Profile hier zu sehen</span>
         </div>
-      </div>
-    </nav>
-    <div id="profilenavbar">
-      <span id="noFriends">Folge Leuten um ihre Profile hier zu sehen</span>
-    </div>
-    <div class="row" id="posts"></div>
-    <button onclick="post()">post</button>
+        <div class="row" id="posts"></div>
+        <div class="container">
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="legal/imprint.html" class="nav-link px-2 text-body-secondary">Imprint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="legal/data-policy.html" class="nav-link px-2 text-body-secondary">Data Policy</a>
+                    </li>
+                </ul>
+                <p class="text-center text-body-secondary">© 2024 Interface</p>
+            </footer>
+        </div>
 
-    <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="legal/imprint.html"
-              class="nav-link px-2 text-body-secondary"
-              >Imprint</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              href="legal/data-policy.html"
-              class="nav-link px-2 text-body-secondary"
-              >Data Policy</a
-            >
-          </li>
-        </ul>
-        <p class="text-center text-body-secondary">© 2024 Interface</p>
-      </footer>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/index.js"></script>
-  </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
 </html>

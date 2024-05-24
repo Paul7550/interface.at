@@ -101,5 +101,6 @@ html, body {
 .profilepic{
     border: 1px solid black;
     width: 100px;
-    height: 10  0px;
+    height: 100px;
+    border-radius: 360px;
 }
