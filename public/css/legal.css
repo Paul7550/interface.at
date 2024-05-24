@@ -22,3 +22,7 @@
     cursor: pointer;
     width: auto;
 }
+
+body, html {
+    margin-left: 2rem;
+}
