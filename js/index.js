@@ -29,24 +29,29 @@ function friends() {
         for (i = 0; i < followedlistuser.length; i++) {
             const profilepic = document.createElement("div");
             const img = document.createElement("img");
+            const link = document.createElement("a");
             profilepic.classList.add("profilepic");
             let countX = i;
             img.id = `img${i}`;
-            profilepic.appendChild(img);
+            link.id = `link${i}`;
+            link.appendChild(img);
+            profilepic.appendChild(link);
             profilepic.addEventListener("click", (event) => {
                 userX(countX);
             });
             document.getElementById("profilenavbar").appendChild(profilepic);
-            if (imgurl[userx] != undefined) {
+
+            if (imgurl[i] != undefined || imgurl[i] != null) {
                 document.getElementById(`img${i}`).src = imgurl[followedlistuser[i]];
             } else {
                 document.getElementById(`img${i}`).src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png";
             }
+            document.getElementById(`link${i}`).href = "../public/userx.html";
         }
     }
 }
 function userX(greeting) {
-    setCookie("userX", greeting - 1);
+    setCookie("userX", greeting);
 }
 function profile() {
     setCookie("userX", logdin - 1);
