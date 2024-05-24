@@ -264,3 +264,7 @@ html, body {
     width: calc(100% - 80px);
     padding: 1rem;
 }
+
+.sidebar ul {
+    padding: 0;
+}
