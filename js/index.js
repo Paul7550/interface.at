@@ -1,20 +1,22 @@
 var logdin = getCookie("logdinuser");
 let followedlistuser = [];
 let userx = logdin - 1;
+let username = JSON.parse(getCookie("usernames"));
 let count;
 let imgurl = JSON.parse(getCookie("imglist"));
 followedlistuser = JSON.parse(getCookie(`followedlist${userx}`));
 function load() {
     if (logdin != "") {
-        document.getElementById("logout").hidden = false;
+        /*  document.getElementById("logout").hidden = false;
         document.getElementById("login").hidden = true;
-        document.getElementById("userx").hidden = false;
+        document.getElementById("userx").hidden = false; */
         friends();
     } else {
         document.getElementById("logout").hidden = true;
         document.getElementById("login").hidden = false;
         document.getElementById("userx").hidden = true;
     }
+    document.getElementById("usernamenav").innerHTML = username[userx];
 }
 function friends() {
     if (followedlistuser.length > 0) {

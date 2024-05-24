@@ -229,7 +229,7 @@ html, body {
     opacity: 0;
 }
 
-.sidebar.active .nav.item {
+.sidebar.active .nav-item {
     opacity: 1;
 }
 
