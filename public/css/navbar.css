@@ -159,6 +159,10 @@
     margin-top: 16px;
    
 }
-#userlink{
+#userlink #userx{
     text-decoration: none;
+}
+#navimg{
+    height: 60px;
+    width: 60px;
 }
