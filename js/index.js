@@ -28,11 +28,11 @@ function friends() {
                 userX(countX);
             });
             document.getElementById("profilenavbar").appendChild(profilepic);
-            /* if (imgurl[i] != undefined || imgurl[i] != null) {
+            if (imgurl[i] != undefined || imgurl[i] != null) {
                 document.getElementById(`img${i}`).src = imgurl[followedlistuser[i]];
             } else {
                 document.getElementById(`img${i}`).src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png";
-            } */
+            }
             document.getElementById(`link${i}`).href = "../public/userx.html";
         }
     }
