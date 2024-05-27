@@ -29,7 +29,7 @@
     width: 3.5rem;
     height: 3.5rem;
     margin: 1rem;
-    margin-top: -0.rem;
+    margin-top: 0.8rem;
 }
 
 .username {
@@ -37,6 +37,8 @@
     width: 30rem;
     height: 3rem;
     margin-left: 5rem;
+    font-size: 30px;
+    text-align: center;
 }
 
 body{
@@ -57,41 +59,31 @@ body{
 }
 
 .search input{
-
     height: 60px;
     text-indent: 25px;
     border: 2px solid #d6d4d4;
-
-
 }
 
-
 .search input:focus{
-
     box-shadow: none;
     border: 2px solid blue;
-
-
 }
 
 .search .fa-search{
-
     position: absolute;
     top: 20px;
     left: 16px;
-
 }
 
 .search button{
-
     position: absolute;
     top: 5px;
     right: 5px;
     height: 50px;
     width: 110px;
     background: blue;
-
 }
+
 .canceluser{
     border: 1px solid black;
     float: right;
@@ -100,6 +92,7 @@ body{
     margin-top: -3.95rem;
     background-color:#eee;
 }
+
 .close{
     width: 3rem;
     height: 3rem;
