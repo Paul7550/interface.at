@@ -45,9 +45,10 @@ html, body {
 #profilenavbar {
     border: 1px solid black;
     padding-bottom: 5rem;
-    margin-left: 2rem;
-    margin-right: 6rem;
-    margin-top: 4rem;
+    
+}
+#friendfont{
+   font-size: small;
 }
 .post {
     border: 1px solid black;
