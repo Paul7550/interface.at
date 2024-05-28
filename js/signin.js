@@ -1,3 +1,38 @@
+//immer
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAzZeIwnnXu8IfnPEyiYkpiQ4HPtL06wrQ",
+    authDomain: "interface-9ded2.firebaseapp.com",
+    projectId: "interface-9ded2",
+    storageBucket: "interface-9ded2.appspot.com",
+    messagingSenderId: "79716050631",
+    appId: "1:79716050631:web:5088a98020dab9bc4400e2",
+    measurementId: "G-WH8FSJXYEX",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const usercollection = collection(db, "users");
+//schreiben/speichern
+/* try {
+  const docRef = await addDoc(usercollection, {
+      first: "Ada",
+      last: "Lovelace",
+      born: 1815,
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+} */
+//lesen:
+const users = await getDocs(usercollection);
+let x = users.docs.map((doc) => doc.data());
+console.log(x[0]);
 let username = [];
 let password = [];
 let email = [];
@@ -8,87 +43,81 @@ var safepassword;
 var userx;
 
 function load() {
-  username = JSON.parse(getCookie("usernames"));
-  email = JSON.parse(getCookie("emails"));
-  usercount = parseInt(getCookie("usercount"));
-  password = JSON.parse(getCookie("passwords"));
+    username = JSON.parse(getCookie("usernames"));
+    email = JSON.parse(getCookie("emails"));
+    usercount = parseInt(getCookie("usercount"));
+    password = JSON.parse(getCookie("passwords"));
 }
 function signin() {
-  for (i = 0; i <= usercount; i++) {
-    if (document.getElementById("email").value == email[i]) {
-      document.getElementById("alert").hidden = false;
-      return;
+    for (i = 0; i <= usercount; i++) {
+        if (document.getElementById("email").value == email[i]) {
+            document.getElementById("alert").hidden = false;
+            return;
+        }
     }
-  }
 
-  let result = document.getElementById("email").value.includes("@");
-  if (result == true) {
-    createacc();
-  } else {
-    document.getElementById("!email").hidden = false;
-    document.getElementById("email").value = "";
-  }
+    let result = document.getElementById("email").value.includes("@");
+    if (result == true) {
+        createacc();
+    } else {
+        document.getElementById("!email").hidden = false;
+        document.getElementById("email").value = "";
+    }
 }
 function createacc() {
-  if (
-    document.getElementById("cfmpassword").value ==
-    document.getElementById("password").value
-  ) {
-    email[usercount] = document.getElementById("email").value;
-    username[usercount] = document.getElementById("username").value;
-    password[usercount] = document.getElementById("password").value;
-    usercount++;
-    setCookie("usercount", usercount);
-    document.getElementById("link").href = "index.html";
-    document.getElementById("username").value = "";
-    document.getElementById("email").value = "";
-    setCookie("logdinuser", usercount);
-    userx = usercount - 1;
-    store();
-  } else if (
-    document.getElementById("cfmpassword").value !=
-    document.getElementById("password").value
-  ) {
-    document.getElementById("!cfmpassword").hidden = false;
-  }
-  document.getElementById("cfmpassword").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("passwordnotmatch").innerHTML = "";
+    if (document.getElementById("cfmpassword").value == document.getElementById("password").value) {
+        email[usercount] = document.getElementById("email").value;
+        username[usercount] = document.getElementById("username").value;
+        password[usercount] = document.getElementById("password").value;
+        usercount++;
+        setCookie("usercount", usercount);
+        document.getElementById("link").href = "index.html";
+        document.getElementById("username").value = "";
+        document.getElementById("email").value = "";
+        setCookie("logdinuser", usercount);
+        userx = usercount - 1;
+        store();
+    } else if (document.getElementById("cfmpassword").value != document.getElementById("password").value) {
+        document.getElementById("!cfmpassword").hidden = false;
+    }
+    document.getElementById("cfmpassword").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("passwordnotmatch").innerHTML = "";
 }
 function store() {
-  XMLDocument;
-  safeusername = JSON.stringify(username);
-  safeemail = JSON.stringify(email);
-  safepassword = JSON.stringify(password);
-  setCookie(`followerlist${userx}`, JSON.stringify([]));
-  setCookie(`followedlist${userx}`, JSON.stringify([]));
-  setCookie("userdes", JSON.stringify([]));
-  setCookie("usercolor", JSON.stringify([]));
-  setCookie("imglist", JSON.stringify([]));
-  setCookie("emails", safeemail);
-  setCookie("usernames", safeusername);
-  setCookie("passwords", safepassword);
+    XMLDocument;
+    safeusername = JSON.stringify(username);
+    safeemail = JSON.stringify(email);
+    safepassword = JSON.stringify(password);
+    setCookie(`followerlist${userx}`, JSON.stringify([]));
+    setCookie(`followedlist${userx}`, JSON.stringify([]));
+    setCookie("userdes", JSON.stringify([]));
+    setCookie("usercolor", JSON.stringify([]));
+    setCookie("imglist", JSON.stringify([]));
+    setCookie("emails", safeemail);
+    setCookie("usernames", safeusername);
+    setCookie("passwords", safepassword);
 }
 function cancel() {
-  document.getElementById("alert").hidden = true;
-  document.getElementById("!cfmpassword").hidden = true;
-  document.getElementById("!email").hidden = true;
+    document.getElementById("alert").hidden = true;
+    document.getElementById("!cfmpassword").hidden = true;
+    document.getElementById("!email").hidden = true;
 }
 function setCookie(cname, cvalue) {
-  document.cookie = cname + "=" + cvalue + ";";
+    document.cookie = cname + "=" + cvalue + ";";
 }
 function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") {
-      c = c.substring(1);
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == " ") {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+    return "";
 }

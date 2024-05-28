@@ -43,12 +43,15 @@ html, body {
     width: 40px;
 }
 #profilenavbar {
-    border: 1px solid black;
     padding-bottom: 5rem;
-    
 }
 #friendfont{
-   font-size: small;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+   font-size:large;
+   font-weight:bolder;
+   padding-bottom: 1rem;
+   border-bottom: 1px solid rgb(0, 0, 0) ;   
 }
 .post {
     border: 1px solid black;
@@ -117,4 +120,5 @@ html, body {
     background-color: blue;
 }
 */
+
 
