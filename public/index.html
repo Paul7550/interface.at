@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/navbar.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
-    <body onload="loadnav()">
+    <body>
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
@@ -18,7 +18,7 @@
                 </div>
                 <i class="bx bx-menu" id="btn"></i>
             </div>
-            <a href="userx.html" id="userlink userx" onclick="profile()">
+            <a href="userx.html" id="userlink userx" onclick="window.profile()">
                 <div class="user">
                     <img
                         src="../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png"
@@ -109,7 +109,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://kit.fontawesome.com/4889bb9c2b.js" crossorigin="anonymous"></script>
-        <script src="../js/navbar.js"></script>
+        <script type="module" src="../js/navbar.js"></script>
         <script type="module" src="../js/index.js"></script>
     </body>
 </html>

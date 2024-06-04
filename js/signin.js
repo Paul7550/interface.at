@@ -60,19 +60,20 @@ function createacc() {
 }
 function create() {
     try {
-        const docRef = addDoc(usercollection, {
+        addDoc(usercollection, {
             email: document.getElementById("email").value,
             username: document.getElementById("username").value,
             password: document.getElementById("password").value,
             followerlist: [],
             followedlist: [],
+            postcount: 0,
             userdes: null,
             usercoller: null,
             imglist: null,
+        }).then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+            window.location.replace("index.html");
         });
-        docRef.id = usercount;
-        console.log("Document written with ID: ", docRef.id);
-        // document.getElementById("link").href = "index.html";
     } catch (e) {
         console.error("Error adding document: ", e);
     }

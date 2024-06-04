@@ -1,38 +1,65 @@
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAzZeIwnnXu8IfnPEyiYkpiQ4HPtL06wrQ",
+    authDomain: "interface-9ded2.firebaseapp.com",
+    projectId: "interface-9ded2",
+    storageBucket: "interface-9ded2.appspot.com",
+    messagingSenderId: "79716050631",
+    appId: "1:79716050631:web:5088a98020dab9bc4400e2",
+    measurementId: "G-WH8FSJXYEX",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const usercollection = collection(db, "users");
+const userdatas = await getDocs(usercollection);
+const users = userdatas.docs.map((doc) => doc.data());
+let logdin = getCookie("logdinuser");
 let btn = document.querySelector("#btn");
 let sidebar = document.querySelector(".sidebar");
-let picurl = JSON.parse(getCookie("imglist"));
-let names = JSON.parse(getCookie("usernames"));
-var user = getCookie("logdinuser") - 1;
-var logdinuser = getCookie("logdinuser");
+let names;
+let picurl;
+if (logdin != "") {
+    let logdinuser = users[getCookie("logdinuser")];
+    picurl = logdinuser.imglist;
+    names = logdinuser.username;
+}
+
 btn.onclick = function () {
     sidebar.classList.toggle("active");
 };
 function loadnav() {
-    if (logdinuser != "") {
+    document.getElementById(`navimg`).src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png ";
+    if (logdin != "") {
         document.getElementById("logout").hidden = false;
         document.getElementById("login").hidden = true;
+        document.getElementById("usernamenav").innerHTML = names;
+        if (picurl != undefined || picurl != null) {
+            document.getElementById(`navimg`).src = picurl;
+        }
     } else {
         document.getElementById("logout").hidden = true;
         document.getElementById("login").hidden = false;
     }
-    document.getElementById("usernamenav").innerHTML = names[user];
-    if (picurl[user] != undefined || picurl[user] != null) {
-        document.getElementById(`navimg`).src = picurl[user];
-    } else {
-        document.getElementById(`navimg`).src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png ";
-    }
-    document.getElementById("usernamenav").innerHTML = names[user];
-    load();
 }
+loadnav();
 function profile() {
-    setCookie("userX", logdin - 1);
+    logdin = getCookie("logdinuser");
+    setCookie("userX", logdin);
 }
+window.profile = profile;
 function logout() {
-    logdin = "";
+    logdin;
     document.getElementById("logout").hidden = true;
     setCookie("logdinuser", logdin);
     load();
 }
+window.logout = logout;
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
 }

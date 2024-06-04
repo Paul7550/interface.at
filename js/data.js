@@ -29,7 +29,5 @@ try {
 } catch (e) {
     console.error("Error adding document: ", e);
 }
-//lesen:
-const users = await getDocs(usercollection);
-let x = users.docs.map((doc) => doc.data());
-console.log(x[0]);
+//lesen
+const users = userdatas.docs.map((doc) => doc.data());

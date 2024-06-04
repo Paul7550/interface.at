@@ -1,92 +1,55 @@
-let username = [];
-let password = [];
-let email = [];
-let usercount = 0;
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAzZeIwnnXu8IfnPEyiYkpiQ4HPtL06wrQ",
+    authDomain: "interface-9ded2.firebaseapp.com",
+    projectId: "interface-9ded2",
+    storageBucket: "interface-9ded2.appspot.com",
+    messagingSenderId: "79716050631",
+    appId: "1:79716050631:web:5088a98020dab9bc4400e2",
+    measurementId: "G-WH8FSJXYEX",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const usercollection = collection(db, "users");
+const userdatas = await getDocs(usercollection);
+const users = userdatas.docs.map((doc) => doc.data());
+let username;
+let userdes;
+let followedlist;
+let followerlist;
+let profileimg;
+let postcount;
+let description;
 let userx;
-let userdes = [];
-let usercolor = [];
-let imgurl = [];
-let followerlistx = [];
-let followedlistuser = [];
-var logdin = getCookie("logdinuser");
 function load() {
-    userx = getCookie("userX");
-    followedlistuser = JSON.parse(getCookie(`followedlist${userx}`));
-    followerlistx = JSON.parse(getCookie(`followerlist${userx}`));
-    username = JSON.parse(getCookie("usernames"));
-    email = JSON.parse(getCookie("emails"));
-    usercount = parseInt(getCookie("usercount"));
-    password = JSON.parse(getCookie("passwords"));
-    usercolor = JSON.parse(getCookie("usercolor"));
-    imgurl = JSON.parse(getCookie("imglist"));
-    userdes = JSON.parse(getCookie("userdes"));
-    userx++;
-    if (userx == logdin) {
-        document.getElementById("editprofilebutton").hidden = false;
-        document.getElementById("contact").hidden = true;
-    }
-    userx--;
+    userx = users[getCookie("userX")];
+    username = userx.username;
+    userdes = userx.userdes;
+    followedlist = userx.followedlist;
+    followerlist = userx.followerlist;
+    profileimg = userx.imglist;
+    postcount = userx.postcount;
+    description = userx.description;
     show();
 }
-function edit() {
-    document.getElementById("editdes").hidden = false;
-    document.getElementById("backroundcolor").hidden = false;
-    document.getElementById("url").hidden = false;
-}
-function img() {
-    imgurl[userx] = document.getElementById("imgurl").value;
-    let saveimg = JSON.stringify(imgurl);
-    setCookie("imglist", saveimg);
-    document.getElementById("imgurl").value = "";
-    document.getElementById("url").hidden = true;
-    show();
-}
-function clearimg() {
-    imgurl[userx] = undefined;
-    let saveimg = JSON.stringify(imgurl);
-    setCookie("imglist", saveimg);
-    document.getElementById("url").hidden = true;
-    show();
-}
-function follow() {
-    followerlistx[followerlistx.length] = userx;
-    let safefollowerlistx = JSON.stringify(followerlistx);
-    setCookie(`followerlist${userx}`, safefollowerlistx);
-    followedlistuser[followedlistuser.length] = userx;
-    let safefollowerlistuser = JSON.stringify(followedlistuser);
-    setCookie(`followedlist${logdin - 1}`, safefollowerlistuser);
-}
-function savecolor() {
-    usercolor[userx] = document.getElementById("backround").value;
-    let safeusercolor = JSON.stringify(usercolor);
-    setCookie("usercolor", safeusercolor);
-    document.getElementById("backroundcolor").hidden = true;
-    document.getElementById("profile").style.backgroundColor = usercolor[userx];
-    show();
-}
+load();
 function show() {
-    document.getElementById("profile").style.backgroundColor = usercolor[userx];
-    document.getElementById("username").innerHTML = username[userx];
-    if (userdes[userx] == undefined) {
-        document.getElementById("des").innerHTML = "no Bio yet";
-    } else {
-        document.getElementById("des").innerHTML = userdes[userx];
+    document.getElementById("username").innerHTML = username;
+    if (profileimg != null) {
+        document.getElementById("profileimg").src = profileimg;
     }
-    if (imgurl[userx] != undefined) {
-        document.getElementById("profileimg").src = imgurl[userx];
-    } else {
-        document.getElementById("profileimg").src = "../sources/person_24dp_FILL0_wght400_GRAD0_opsz24.png";
+    document.getElementById("follower").innerHTML = followerlist.length;
+    document.getElementById("followed").innerHTML = followedlist.length;
+    document.getElementById("postcount").innerHTML = postcount;
+    if (description != null) {
+        document.getElementById("des").innerHTML = description;
     }
-    document.getElementById("followercounter").innerHTML = followerlistx.length;
-    document.getElementById("followedcounter").innerHTML = followedlistuser.length;
-}
-
-function savedes() {
-    userdes[userx] = document.getElementById("inputdes").value;
-    let safeuserdes = JSON.stringify(userdes);
-    setCookie("userdes", safeuserdes);
-    document.getElementById("editdes").hidden = true;
-    show();
 }
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
