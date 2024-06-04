@@ -1,9 +1,10 @@
-//immer
 import {
     getFirestore,
     collection,
     getDocs,
     addDoc,
+    setDoc,
+    doc,
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 const firebaseConfig = {
@@ -18,38 +19,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const usercollection = collection(db, "users");
-//schreiben/speichern
-/* try {
-  const docRef = await addDoc(usercollection, {
-      first: "Ada",
-      last: "Lovelace",
-      born: 1815,
-  });
-  console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-  console.error("Error adding document: ", e);
-} */
-//lesen:
-const users = await getDocs(usercollection);
-let x = users.docs.map((doc) => doc.data());
-console.log(x[0]);
-let username = [];
-let password = [];
+const userdatas = await getDocs(usercollection);
+const users = userdatas.docs.map((doc) => doc.data());
+var usercount = users.length;
 let email = [];
-let usercount = 0;
-var safeusername;
-var safeemail;
-var safepassword;
-var userx;
-
 function load() {
-    username = JSON.parse(getCookie("usernames"));
-    email = JSON.parse(getCookie("emails"));
-    usercount = parseInt(getCookie("usercount"));
-    password = JSON.parse(getCookie("passwords"));
+    for (let i = 0; i < usercount; i++) {
+        email[i] = users[i].email;
+    }
 }
+load();
+
 function signin() {
-    for (i = 0; i <= usercount; i++) {
+    for (let i = 0; i <= usercount; i++) {
         if (document.getElementById("email").value == email[i]) {
             document.getElementById("alert").hidden = false;
             return;
@@ -64,19 +46,13 @@ function signin() {
         document.getElementById("email").value = "";
     }
 }
+window.signin = signin;
 function createacc() {
     if (document.getElementById("cfmpassword").value == document.getElementById("password").value) {
-        email[usercount] = document.getElementById("email").value;
-        username[usercount] = document.getElementById("username").value;
-        password[usercount] = document.getElementById("password").value;
-        usercount++;
-        setCookie("usercount", usercount);
-        document.getElementById("link").href = "index.html";
+        create();
         document.getElementById("username").value = "";
         document.getElementById("email").value = "";
         setCookie("logdinuser", usercount);
-        userx = usercount - 1;
-        store();
     } else if (document.getElementById("cfmpassword").value != document.getElementById("password").value) {
         document.getElementById("!cfmpassword").hidden = false;
     }
@@ -84,25 +60,32 @@ function createacc() {
     document.getElementById("password").value = "";
     document.getElementById("passwordnotmatch").innerHTML = "";
 }
-function store() {
-    XMLDocument;
-    safeusername = JSON.stringify(username);
-    safeemail = JSON.stringify(email);
-    safepassword = JSON.stringify(password);
-    setCookie(`followerlist${userx}`, JSON.stringify([]));
-    setCookie(`followedlist${userx}`, JSON.stringify([]));
-    setCookie("userdes", JSON.stringify([]));
-    setCookie("usercolor", JSON.stringify([]));
-    setCookie("imglist", JSON.stringify([]));
-    setCookie("emails", safeemail);
-    setCookie("usernames", safeusername);
-    setCookie("passwords", safepassword);
+function create() {
+    try {
+        const docRef = addDoc(usercollection, {
+            email: document.getElementById("email").value,
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+            followerlist: [],
+            followedlist: [],
+            userdes: null,
+            usercoller: null,
+            imglist: null,
+        });
+        docRef.id = usercount;
+        console.log("Document written with ID: ", docRef.id);
+        document.getElementById();
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
 }
+window.create = create;
 function cancel() {
     document.getElementById("alert").hidden = true;
     document.getElementById("!cfmpassword").hidden = true;
     document.getElementById("!email").hidden = true;
 }
+window.cancel = cancel;
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
 }
