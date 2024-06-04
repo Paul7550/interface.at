@@ -1,135 +1,37 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
-.button {
-    border-radius: 15px;
-    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
-    color: white;
-    padding: 10px 60px;
-    cursor: pointer;
-    width: auto;
+.profilepicture {
+    border: 1px solid black;
+    width: 7rem;
+    height: 7rem;
+    margin-inline: 10px;
 }
 
-.buttonedit {
-    border-radius: 15px;
-    background: linear-gradient(90deg, rgba(0,51,103,1) 0%, rgba(0,113,227,1) 100%);
-    color: white;
-    padding: 5px 30px;
-    cursor: pointer;
-    width: auto;
+.username {
+    border: 1px solid black;
+    height: 3rem;
+    width: 20rem;
+    margin-inline: 5px;
 }
 
-#profilepicture {
+.follow, .followcount, .posts {
     border: 1px solid black;
-    padding: 4rem;
-    width: 100px;
-    height: 100px;
-    position: relative;
-    
-}
-#profileimg{
-    position: relative;
-    border: 1px solid black;
-    width: 100px;
-    height: 100px;
-    margin-left: 450px;
-    
+    width: 10rem;
+    height: 3rem;
+    margin-inline: 10px;
 }
 
-
-#username {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 25rem;
-    margin-left: 45rem;
-    position: relative;
-    top: -4rem;
+.space {
+    height: 10px;
 }
 
-#editprofilebutton {
+.description {
     border: 1px solid black;
-    /*padding: 1rem;*/
-    width: 9rem;
-    margin-left: 71rem;
-    position: relative;
-    top: -6.05rem;
-}
-#backroundcolor{
-    border: 1px solid black;
-    width: 9rem;
-    margin-left: 45rem;
-    position: relative;
-    top: -5.0rem;
-}
-#url{
-    border: 1px solid black;
-    width: 9rem;
-    margin-left: 35rem;
-    position: relative;
-    top: 6.0rem; 
-}
-
-#postscount {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 9rem;
-    margin-left: 45rem;
-    position: relative;
-    top: -5.05rem;
-}
-#inputdes{
-    border: 1px solid black;
-}
-
-#follower {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 9rem;
-    margin-left: 55rem;
-    position: relative;
-    top: -9.6rem;
-}
-
-#followed {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 9rem;
-    margin-left: 65rem;
-    position: relative;
-    top: -14.1rem;
-}
-#contact{
-    border: 1px solid black;
-    padding: 1rem;
-    width: 11rem;
-    margin-left: 55rem;
-    position: relative;
-    top: -9.6rem;
-
-}
-
-#description {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 40rem;
-    margin-left: 35rem;
-    position: relative;
-    top: -3.05rem;
-}
-
-#line {
-    border-top: 1px solid black;
-    margin-left: 35rem;
-    width: 40rem;
-}
-
-#posts {
-    border: 1px solid black;
-    padding: 1rem;
-    margin-left: 35rem;
-    width: 40rem;
-    margin-top: 2rem;
+    width: 32.5rem;
     height: 15rem;
+    margin-inline: 10px;
 }
