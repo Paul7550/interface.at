@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/signin.css" />
-    <script src="../js/login.js	"></script>
-  </head>
-  <body onload="load()">
-    <div class="alert" id="notmatch" hidden>
-      Tut mir leid, es scheint die falsche E-mail-Adresse oder das falsche
-      passwort zu sein <button id="cancel" onclick="cancel()">x</button>
-    </div>
-    <div id="back">
-      <a href="index.html"
-        ><button id="backbutton">
-          <span class="line-md--home-twotone-alt"></span></button
-      ></a>
-    </div>
-    <div id="container">
-      <div id="signupform">
-        <h1 class="title">Login Form</h1>
-        <div class="wrapper">
-          <a href="signin.html"><button class="button">Signup</button></a>
-          <a href="login.html"
-            ><button class="button" id="space">Login</button></a
-          >
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login</title>
+        <link rel="stylesheet" href="css/signin.css" />
+        <script type="module" src="../js/login.js	"></script>
+    </head>
+    <body>
+        <div class="alert" id="notmatch" hidden>
+            Tut mir leid, es scheint die falsche E-mail-Adresse oder das falsche passwort zu sein
+            <button id="cancel" onclick="window.cancel()">x</button>
         </div>
-        <br />
-        <div id="textinput">
-          <input
-            id="email"
-            placeholder="E-mail"
-            type="text"
-            class="spaceinput"
-          />
-          <br />
-          <input
-            id="password"
-            placeholder="Password"
-            type="password"
-            class="spaceinput"
-          />
-          <span id="passwordnotmatch"></span>
-          <br />
-          <div>
-            <a id="link"
-              ><button class="signupbutton" id="link" onclick="login()">
-                Login
-              </button></a
-            >
-          </div>
+        <div id="back">
+            <a href="index.html"
+                ><button id="backbutton">
+                    <span class="line-md--home-twotone-alt"></span></button
+            ></a>
         </div>
-        <!--Textinput-->
-      </div>
-      <!--Signupform-->
-    </div>
-    <!--Container-->
-  </body>
+        <div id="container">
+            <div id="signupform">
+                <h1 class="title">Login Form</h1>
+                <div class="wrapper">
+                    <a href="signin.html"><button class="button">Signup</button></a>
+                    <a href="login.html"><button class="button" id="space">Login</button></a>
+                </div>
+                <br />
+                <div id="textinput">
+                    <input id="email" placeholder="E-mail" type="text" class="spaceinput" />
+                    <br />
+                    <input id="password" placeholder="Password" type="password" class="spaceinput" />
+                    <span id="passwordnotmatch"></span>
+                    <br />
+                    <div>
+                        <a id="link"><button class="signupbutton" id="link" onclick="window.login()">Login</button></a>
+                    </div>
+                </div>
+                <!--Textinput-->
+            </div>
+            <!--Signupform-->
+        </div>
+        <!--Container-->
+    </body>
 </html>

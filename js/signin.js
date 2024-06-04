@@ -3,8 +3,6 @@ import {
     collection,
     getDocs,
     addDoc,
-    setDoc,
-    doc,
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 const firebaseConfig = {
@@ -74,7 +72,7 @@ function create() {
         });
         docRef.id = usercount;
         console.log("Document written with ID: ", docRef.id);
-        document.getElementById();
+        // document.getElementById("link").href = "index.html";
     } catch (e) {
         console.error("Error adding document: ", e);
     }

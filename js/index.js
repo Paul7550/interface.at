@@ -1,10 +1,7 @@
 var logdin = getCookie("logdinuser");
 let followedlistuser = [];
 let userx = logdin - 1;
-let username = JSON.parse(getCookie("usernames"));
 let count;
-let imgurl = JSON.parse(getCookie("imglist"));
-followedlistuser = JSON.parse(getCookie(`followedlist${userx}`));
 function load() {
     if (logdin != "") {
         friends();
