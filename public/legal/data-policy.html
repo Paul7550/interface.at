@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="../css/legal.css">
     </head>
     <body>
-
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
@@ -18,48 +17,57 @@
                 </div>
                 <i class="bx bx-menu" id="btn"></i>
             </div>
-            <div class="user">
-                <img
-                        src="../../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png"
-                        id="navimg"
-                        alt="test"
-                        class="user-img"
-                />
-                <div>
-                    <p class="bold" id="usernamenav"></p>
+            <a href="../userx.html" id="userlink userx" onclick="profile()">
+                <div class="user">
+                    <img
+                            src="../../sources/person_24dp_FILL0_wght400_GRAD0_opsz24 (1).png"
+                            id="navimg"
+                            alt="test"
+                            class="user-img"
+                    />
+                    <div>
+                        <p class="bold" id="usernamenav"></p>
+                    </div>
                 </div>
-            </div>
+            </a>
             <ul>
                 <li>
-                    <a href="#">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="nav-item">Dashboard</span>
+                    <a href="../index.html">
+                        <i class="bx bx-home"></i>
+                        <span class="nav-item">Home</span>
                     </a>
-                    <span class="tooltip">Dashboard</span>
+                    <span class="tooltip">Home</span>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="bx bxs-shopping-bag"></i>
-                        <span class="nav-item">Products</span>
+                    <a href="../search.html">
+                        <i class="bx bx-search"></i>
+                        <span class="nav-item">Suche</span>
                     </a>
-                    <span class="tooltip">Products</span>
+                    <span class="tooltip">Suche</span>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="bx bx-list-check"></i>
-                        <span class="nav-item">Categories</span>
+                    <a href="../create.html">
+                        <i class="bx bx-plus-circle"></i>
+                        <span class="nav-item">Erstellen</span>
                     </a>
-                    <span class="tooltip">Categories</span>
+                    <span class="tooltip">Erstellen</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../settings.html">
                         <i class="bx bx-cog"></i>
                         <span class="nav-item">Settings</span>
                     </a>
                     <span class="tooltip">Settings</span>
                 </li>
-                <li>
-                    <a href="#">
+                <li id="login">
+                    <a href="../login.html">
+                        <i class="bx bx-log-in"></i>
+                        <span class="nav-item">Login</span>
+                    </a>
+                    <span class="tooltip">login</span>
+                </li>
+                <li onclick="logout()" id="logout">
+                    <a href="../index.html">
                         <i class="bx bx-log-out"></i>
                         <span class="nav-item">Logout</span>
                     </a>
@@ -1205,6 +1213,25 @@
                     Bei Fragen zum Thema Datenschutz auf unserer Website zögern Sie bitte nicht, uns oder die verantwortliche Stelle zu kontaktieren. Wir wünschen Ihnen noch eine schöne Zeit und hoffen, Sie auf unserer Website bald wieder begrüßen zu dürfen.</p>
                 <p>Alle Texte sind urheberrechtlich geschützt.</p>
                 <p style="margin-top:15px">Quelle: Erstellt mit dem <a href="https://www.adsimple.at/datenschutz-generator/" title="Datenschutz Generator Österreich von AdSimple">Datenschutz Generator Österreich</a> von AdSimple</p>
+
+                <div class="container">
+                    <footer class="py-3 my-4">
+                        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="imprint.html" class="nav-link px-2 text-body-secondary">Imprint</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="data-policy.html" class="nav-link px-2 text-body-secondary"
+                                >Data Policy</a
+                                >
+                            </li>
+                        </ul>
+                        <p class="text-center text-body-secondary">© 2024 Interface</p>
+                    </footer>
+                </div>
             </div>
         </div>
 
