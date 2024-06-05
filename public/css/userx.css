@@ -75,3 +75,7 @@ html, body {
     width: 32.5rem;
     margin-inline: 10px;
 }
+.img{
+    width: 300px;
+    height: 300px;
+}

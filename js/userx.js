@@ -19,12 +19,15 @@ const db = getFirestore(app);
 const usercollection = collection(db, "users");
 const userdatas = await getDocs(usercollection);
 const users = userdatas.docs.map((doc) => doc.data());
+const postcollection = collection(db, "posts");
+const postdatas = await getDocs(postcollection);
+const posts = postdatas.docs.map((doc) => doc.data());
 let username;
 let userdes;
 let followedlist;
 let followerlist;
 let profileimg;
-let postcount;
+let postcount = 0;
 let description;
 let userx;
 let logdin = getCookie("logdinuser");
@@ -49,13 +52,52 @@ function show() {
     if (profileimg != null) {
         document.getElementById("profileimg").src = profileimg;
     }
-    document.getElementById("follower").innerHTML = followerlist.length;
-    document.getElementById("followed").innerHTML = followedlist.length;
-    document.getElementById("postcount").innerHTML = postcount;
+
     if (description != null) {
         document.getElementById("des").innerHTML = description;
     }
+    for (let i = 0; i < posts.length; i++) {
+        if (posts[i].postusername == username) {
+            postcount++;
+            const card = document.createElement("div");
+            card.classList.add("card");
+            const img = document.createElement("img");
+            img.classList.add("card-img-top");
+            img.id = `img${i}`;
+            img.classList.add("img");
+            card.appendChild(img);
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+            const username = document.createElement("h5");
+            username.id = `username${i}`;
+            cardBody.appendChild(username);
+            const des = document.createElement("p");
+            des.classList.add = "card-text";
+            des.id = `des${i}`;
+            cardBody.appendChild(des);
+            card.appendChild(cardBody);
+            document.getElementById("posts").appendChild(card);
+            document.getElementById(`username${i}`).innerHTML = posts[i].postusername;
+            document.getElementById(`des${i}`).innerHTML = posts[i].postdes;
+            document.getElementById(`img${i}`).src = posts[i].postimg;
+        }
+    }
+    document.getElementById("follower").innerHTML = followerlist.length + "  Follower";
+    document.getElementById("followed").innerHTML = followedlist.length + "  Gefolgt";
+    document.getElementById("postcount").innerHTML = postcount + "  Beiträge";
 }
+function follow() {
+    let followedlistlogdin = users[logdin].followedlist;
+    try {
+        const docRef = addDoc(usercollection, {
+            followedlist: followedlistlogdin,
+        });
+        console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
+}
+window.follow = follow;
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
 }
