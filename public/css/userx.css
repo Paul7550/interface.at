@@ -53,13 +53,25 @@ html, body {
         margin-right: auto;
     }
 
-    .profilepicture {
+    .profilepicture, .description, .post, .line {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .description {
-        margin-left: auto;
-        margin-right: auto;
+    .line, post {
+        margin-inline: 0;
     }
+}
+
+.post {
+    border: 1px solid black;
+    width: 32.5rem;
+    height: 20rem;
+    margin-inline: 10px;
+}
+
+.line {
+    border-top: 2px solid black;
+    width: 32.5rem;
+    margin-inline: 10px;
 }
