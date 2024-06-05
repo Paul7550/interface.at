@@ -27,7 +27,11 @@ let profileimg;
 let postcount;
 let description;
 let userx;
+let logdin = getCookie("logdinuser");
 function load() {
+    if (getCookie("userX") == getCookie("logdinuser")) {
+        document.getElementById("followdiv").hidden = true;
+    }
     userx = users[getCookie("userX")];
     username = userx.username;
     userdes = userx.userdes;
@@ -36,6 +40,7 @@ function load() {
     profileimg = userx.imglist;
     postcount = userx.postcount;
     description = userx.description;
+
     show();
 }
 load();
