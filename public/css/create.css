@@ -17,6 +17,12 @@ body {
     height: 15rem;
     margin-inline: auto;
 }
-.addpic{
+#addimg{
      height: 300px;
+}
+.card{
+    width: 400px;
+    height: 550px;
+    margin-left: 500px;
+    border: 1px solid black;
 }

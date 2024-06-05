@@ -1,4 +1,29 @@
-var logdin = getCookie("logdinuser");
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    addDoc,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyAzZeIwnnXu8IfnPEyiYkpiQ4HPtL06wrQ",
+    authDomain: "interface-9ded2.firebaseapp.com",
+    projectId: "interface-9ded2",
+    storageBucket: "interface-9ded2.appspot.com",
+    messagingSenderId: "79716050631",
+    appId: "1:79716050631:web:5088a98020dab9bc4400e2",
+    measurementId: "G-WH8FSJXYEX",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const usercollection = collection(db, "users");
+const userdatas = await getDocs(usercollection);
+const users = userdatas.docs.map((doc) => doc.data());
+const postcollection = collection(db, "posts");
+const postdatas = await getDocs(postcollection);
+const posts = postdatas.docs.map((doc) => doc.data());
+
+let logdin = getCookie("logdinuser");
 let followedlistuser = [];
 let userx = logdin - 1;
 let count;
@@ -6,7 +31,9 @@ function load() {
     if (logdin != "") {
         friends();
     }
+    post();
 }
+load();
 function friends() {
     if (followedlistuser.length > 0) {
         document.getElementById("profilenavbar").innerHTML = "";
@@ -41,27 +68,30 @@ function profile() {
     setCookie("userX", logdin - 1);
 }
 function post() {
-    const main = document.createElement("div");
-    main.classList.add("post");
-    main.classList.add("col-sm-12");
-    const profilepicture = document.createElement("div");
-    profilepicture.classList.add("profilepicture");
-    const image = document.createElement("img");
-    image.classList.add("image");
-    const username = document.createElement("div");
-    username.classList.add("username");
-    const date = document.createElement("div");
-    date.classList.add("date");
-    const description = document.createElement("div");
-    description.classList.add("description");
-    profilepicture.appendChild(image);
-    main.appendChild(profilepicture);
-    username.appendChild(date);
-    main.appendChild(username);
-    main.appendChild(description);
-    document.getElementById("posts").appendChild(main);
+    for (let i = 0; i < posts.length; i++) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        const img = document.createElement("img");
+        img.classList.add("card-img-top");
+        img.id = `img${i}`;
+        img.classList.add("img");
+        card.appendChild(img);
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+        const username = document.createElement("h5");
+        username.id = `username${i}`;
+        cardBody.appendChild(username);
+        const des = document.createElement("p");
+        des.classList.add = "card-text";
+        des.id = `des${i}`;
+        cardBody.appendChild(des);
+        card.appendChild(cardBody);
+        document.getElementById("posts").appendChild(card);
+        document.getElementById(`username${i}`).innerHTML = posts[i].postusername;
+        document.getElementById(`des${i}`).innerHTML = posts[i].postdes;
+        document.getElementById(`img${i}`).src = posts[i].postimg;
+    }
 }
-
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";";
 }

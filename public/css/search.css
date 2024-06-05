@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
-#userX{
-    /* 
-    background-color: gray;
-    */
-}
-
 .profile {
     border: 1px solid black;
     width: 40rem;
@@ -13,9 +7,6 @@
     margin-inline: auto;
     margin-top: 3rem;
     background-color:#eee;
-}
-.name{
-
 }
 .button1 {
     display: flex;
