@@ -17,6 +17,12 @@ html, body {
     width: 20rem;
     margin-inline: 5px;
 }
+#followdiv{
+    border: 1px solid black;
+    height: 3rem;
+    width: 20rem;
+    margin-inline: 5px;
+}
 
 .follow, .followcount, .posts {
     border: 1px solid black;

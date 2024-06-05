@@ -56,7 +56,7 @@ window.profile = profile;
 function logout() {
     logdin;
     document.getElementById("logout").hidden = true;
-    setCookie("logdinuser", logdin);
+    setCookie("logdinuser", "");
     load();
 }
 window.logout = logout;

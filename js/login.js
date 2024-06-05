@@ -43,7 +43,7 @@ function login() {
             document.getElementById("password").value = "";
             document.getElementById("link").href = "index.html";
             i++;
-            setCookie("logdinuser", i);
+            setCookie("logdinuser", i - 1);
         }
     }
     if (getCookie("logdinuser") == "") {
